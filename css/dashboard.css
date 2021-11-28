@@ -1,0 +1,98 @@
+section .box-container .box{
+    padding: 1.5rem;
+    box-shadow: var(--box-shadow);
+    background-color: #fff;
+}
+
+.main-data .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    gap: 1.5rem;
+}
+
+.main-data .box-container .box{
+    border: .1rem solid rgba(0,0,0,.1);
+    padding: 3rem;
+    color: #fff;
+}
+
+.main-data .box-container .box i{
+    line-height: 64px;
+    font-size: 3rem;
+}
+
+.main-data .box-container .box .info{
+    float: right;
+}
+
+.main-data .box-container .box .info span{
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
+
+.main-data .box-container .box .info h1{
+    line-height: 3.5rem;
+}
+
+#new-orders{
+    background-color: #f44336;
+}
+
+#new-users{
+    background-color: #2196f3;
+}
+
+#total-sales{
+    background-color: #009688;
+}
+
+.statistics .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.statistics #bar-chart{
+    width: calc(60% - 1.5rem);
+    min-width: 50rem;
+}
+
+.statistics #line-chart{
+    width: 40%;
+    min-width: 35rem;
+}
+
+.statistics #donut-chart{
+    width: 30rem;
+}
+
+.statistics #products-info{
+    width: 40rem;
+    overflow: auto;
+    max-height: 40rem;
+}
+
+.statistics #products-info .product{
+    padding: .5rem;
+    border-bottom: .1rem solid rgba(0,0,0,.2);
+    display: flex;
+    margin-top: .7rem;
+}
+
+.statistics #products-info .product .image{
+    width: 6rem;
+    height: 6rem;
+}
+
+.statistics #products-info .product .image img{
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    border: .3rem solid rgba(0,0,0,.1);
+    object-fit: cover;
+}
+
+
+.statistics #products-info .product .content{
+ margin-left: 3rem;
+}
