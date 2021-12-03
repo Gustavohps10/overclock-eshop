@@ -6,5 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'App\\' => array($baseDir . '/App'),
+    'Source\\' => array($baseDir . '/source'),
+    'League\\Plates\\' => array($vendorDir . '/league/plates/src'),
+    'CoffeeCode\\Router\\' => array($vendorDir . '/coffeecode/router/src'),
+    'CoffeeCode\\DataLayer\\' => array($vendorDir . '/coffeecode/datalayer/src'),
 );
