@@ -16,12 +16,22 @@ class ComposerStaticInit9cf6dff2b12097999d78bd5baaf800a4
         'afa76803f24616d7599be3b7b0846adc' => __DIR__ . '/..' . '/league/plates/src/Extension/Folders/folders.php',
         '16c5be35e32c6cf916d875518b909210' => __DIR__ . '/..' . '/league/plates/src/Util/util.php',
         '9bd2ec8822a509d00a9c42bf013d00c6' => __DIR__ . '/../..' . '/source/Config.php',
+        '4f6e88a1cb890ec278a005edb14c7ee1' => __DIR__ . '/../..' . '/source/Helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
         'S' => 
         array (
             'Source\\' => 7,
+        ),
+        'P' => 
+        array (
+            'PHPMailer\\PHPMailer\\' => 20,
+        ),
+        'M' => 
+        array (
+            'MatthiasMullie\\PathConverter\\' => 29,
+            'MatthiasMullie\\Minify\\' => 22,
         ),
         'L' => 
         array (
@@ -30,6 +40,7 @@ class ComposerStaticInit9cf6dff2b12097999d78bd5baaf800a4
         'C' => 
         array (
             'CoffeeCode\\Router\\' => 18,
+            'CoffeeCode\\Optimizer\\' => 21,
             'CoffeeCode\\DataLayer\\' => 21,
         ),
     );
@@ -39,6 +50,18 @@ class ComposerStaticInit9cf6dff2b12097999d78bd5baaf800a4
         array (
             0 => __DIR__ . '/../..' . '/source',
         ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
+        'MatthiasMullie\\PathConverter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/matthiasmullie/path-converter/src',
+        ),
+        'MatthiasMullie\\Minify\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/matthiasmullie/minify/src',
+        ),
         'League\\Plates\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/plates/src',
@@ -46,6 +69,10 @@ class ComposerStaticInit9cf6dff2b12097999d78bd5baaf800a4
         'CoffeeCode\\Router\\' => 
         array (
             0 => __DIR__ . '/..' . '/coffeecode/router/src',
+        ),
+        'CoffeeCode\\Optimizer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/coffeecode/optimizer/src',
         ),
         'CoffeeCode\\DataLayer\\' => 
         array (

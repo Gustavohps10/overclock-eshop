@@ -1,7 +1,16 @@
 <?php
 
-define("ROOT", "http://localhost/git-hub/sitema-venda");
-define("SITE", "GHPS");
+define("SITE", [
+    "name" => "GHPS",
+    "desc" => "lorem ipsum",
+    "domain" => "",
+    "locale" => "pt_BR",
+    "root" => "http://localhost/git-hub/sitema-venda"
+]);
+
+/**
+ * DATABASE CONN
+ */
 
 define("DATA_LAYER_CONFIG", [
     "driver" => "mysql",
@@ -18,9 +27,18 @@ define("DATA_LAYER_CONFIG", [
     ]
 ]);
 
-function url($uri = null){
-    if($uri){
-        return ROOT."/{$uri}";
-    }
-    return ROOT;
+/**
+ * SITE MINIFY
+ */
+
+if($_SERVER["SERVER_NAME"] == "localhost"){
+    require __DIR__."/Minify.php";
 }
+
+/**
+ * MAIL CONNECT
+ */
+
+define("MAIL", [
+    
+]);

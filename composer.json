@@ -7,12 +7,17 @@
             "Source\\": "source/"
         },
         "files":[
-            "source/Config.php"
+            "source/Config.php",
+            "source/Helpers.php"
         ]
     },
     "require": {
+        "ext-json": "*",
         "coffeecode/datalayer": "1.1.*",
         "coffeecode/router": "1.0.*",
-        "league/plates": "v4.0.0-alpha"
+        "league/plates": "v4.0.0-alpha",
+        "coffeecode/optimizer": "2.0.*",
+        "phpmailer/phpmailer": "6.1.*",
+        "matthiasmullie/minify":"1.3.*"
     }
 }

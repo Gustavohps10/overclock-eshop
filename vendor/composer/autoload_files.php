@@ -15,4 +15,5 @@ return array(
     'afa76803f24616d7599be3b7b0846adc' => $vendorDir . '/league/plates/src/Extension/Folders/folders.php',
     '16c5be35e32c6cf916d875518b909210' => $vendorDir . '/league/plates/src/Util/util.php',
     '9bd2ec8822a509d00a9c42bf013d00c6' => $baseDir . '/source/Config.php',
+    '4f6e88a1cb890ec278a005edb14c7ee1' => $baseDir . '/source/Helpers.php',
 );

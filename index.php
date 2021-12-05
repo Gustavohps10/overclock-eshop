@@ -4,18 +4,15 @@ require __DIR__ ."/vendor/autoload.php";
 
 use CoffeeCode\Router\Router;
 
-$router = new Router(ROOT);
-
-/*
- *Controllers 
- */
-$router->namespace("Source\App");
+$router = new Router(site());
+$router->namespace("Source\Controllers");
 
 /*
  *Web
  */
 $router->group(null);
-$router->get("/", "Web:home");
+$router->get("/", "Web:home", "web.home");
+$router->get("/login", "Web:login", "web.login");
 
 /**
  * Admin
