@@ -13,8 +13,10 @@ class Auth extends Controller{
         $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
         
         $usuario = new Usuario();
+        $usuario->nome = $data['name'];
+        $usuario->username = $data['username'];
         $usuario->email = $data['email'];
-        $usuario->senha = $data['password'];
+        $usuario->senha = $data['passwd'];
         $usuario->fk_idPerfil = 1;
         $usuario->save();
 

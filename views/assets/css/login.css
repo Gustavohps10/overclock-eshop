@@ -77,11 +77,11 @@
 }
 
 .login form p a{
-    color: rgb(36, 129, 36);
+    color: #192a56;
 }
 
 .login form p a:hover{
-    color: rgb(46, 46, 228);
+    color: #27ae60;
     text-decoration: underline;
 }
 
