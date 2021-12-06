@@ -12,12 +12,20 @@ class Web extends Controller{
     }
 
     public function login(){
-        echo "<h1>TESTE</h1>";
+        echo $this->view->render("theme/app/login", [
+            "title" => "LOGIN | ". site("name"),
+        ]);
     }
 
     public function home(){
         echo $this->view->render("theme/app/home", [
             "title" => "INICIO | ". "TESTE",
+        ]);
+    }
+
+    public function register(){
+        echo $this->view->render("theme/app/register", [
+            "title" => site("name")." | CADASTRAR",
         ]);
     }
     

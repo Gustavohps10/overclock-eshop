@@ -13,6 +13,16 @@ $router->namespace("Source\Controllers");
 $router->group(null);
 $router->get("/", "Web:home", "web.home");
 $router->get("/login", "Web:login", "web.login");
+$router->get("/cadastrar", "Web:register", "web.register");
+
+
+/**
+ * Auth
+ */
+$router->group(null);
+$router->post("/auth", "Auth:login", "auth.login");
+$router->post("/register", "Auth:register", "auth.register");
+
 
 /**
  * Admin

@@ -1,0 +1,119 @@
+.login{
+  padding: 10rem 0;
+  background-color: #eee;
+  position: relative;
+  overflow: hidden;
+  height: 95vh;
+}
+
+.login form{
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    padding: 3rem;
+    background-color: #fff;
+    width: 30%;
+    height: 70%;
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+    z-index: 1002;
+}
+
+.login form h1{
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.login form .input-field{
+    width: 100%;
+    height: 55px;
+    background-color: #f0f0f0;
+    border-radius: 55px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    margin: 10px 0;
+    padding: 0 .4rem;
+    border: .2rem solid rgba(0,0,0,.2);
+}
+
+.login form .input-field i{
+    text-align: center;
+    line-height: 55px;
+    color: #acacac;
+    font-size: 1.5rem;
+}
+
+.login form .input-field input{
+    background: none;
+    outline: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.login form input.btn{
+    width: 80%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #219c55;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 55px;
+    transition: .5s;
+    padding: 1rem;
+}
+
+.login form input.btn:hover{
+    background-color: #1c7240;
+}
+
+.login form p{
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.login form p a{
+    color: rgb(36, 129, 36);
+}
+
+.login form p a:hover{
+    color: rgb(46, 46, 228);
+    text-decoration: underline;
+}
+
+#left-ball{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translate(-50%, 50%);
+    width: 130rem;
+    height: 130rem;
+    background-color: #219c55;
+    border-radius: 50%;
+    z-index: 1000;
+}
+
+
+#right-ball{
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    width: 80vw;
+    height: 80vw;
+    background-color: #219c55;
+    border-radius: 50%;
+    z-index: 1000;
+}
+
+.login img{
+    position: absolute;
+    bottom: 16%;
+    right: 8rem;
+    width: 35%;
+    z-index: 1000;
+}

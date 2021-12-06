@@ -1,4 +1,3 @@
-<?= $t?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -22,10 +21,18 @@
         </nav>
 
         <div class="icons">
-            <i class="fas fa-bars" id="menu-bars"></i>
-            <i class="fas fa-search" id="search-icon"></i>
-            <a href="#" class="fas fa-shopping-cart"></a>
-            <a href="#" class="fas fa-user"></a>
+            <i class="item fas fa-bars" id="menu-bars"></i>
+            <i class="item fas fa-search" id="search-icon"></i>
+            <a href="#" class="item fas fa-shopping-cart"></a>
+            <i href="#" class="item fas fa-user"></i>
+            <nav class="nav-user">
+                <i class="fas fa-caret-up arrow"></i>
+                <ul>
+                    <li><a href="<?= $router->route('web.login')?>"><i class="fas fa-sign-in-alt"></i>Login / Registrar</a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i>Meus Favoritos</a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i>Suporte</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
