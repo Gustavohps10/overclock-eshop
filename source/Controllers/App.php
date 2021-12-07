@@ -9,7 +9,7 @@ class App extends Controller{
     public function __construct($router){
         parent::__construct($router);
 
-        if(!empty($_SESSION["user"]) && !$this->user = (new Usuario)->findById($_SESSION["user"])){
+        if(!empty($_SESSION["user"]) && !$this->user = (new Usuario())->findById($_SESSION["user"])){
             unset($_SESSION["user"]);
             $this->router->redirect("web.login");
         }
@@ -35,6 +35,12 @@ class App extends Controller{
         echo $this->view->render("theme/app/error", [
             "error" => "$data[errcode]",
             "title" => "ERRO | ". site("name"),
+        ]);
+    }
+
+    public function denied(){
+        echo $this->view->render("theme/app/denied", [
+            "title" => "ACESSO NEGADO! | ". site("name"),
         ]);
     }
 }

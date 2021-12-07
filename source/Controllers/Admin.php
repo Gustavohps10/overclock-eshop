@@ -1,13 +1,19 @@
 <?php
 
 namespace Source\Controllers;
-//use Source\Models\Produto;
+use Source\Models\Usuario;
 
 class Admin extends Controller{
+    protected $user;
+
     public function __construct($router){
         parent::__construct($router);
 
-        if(!empty($_SESSION["user"])){
+        if(!empty($_SESSION["user"]) && $this->user = (new Usuario())->findById($_SESSION["user"])){
+            if($this->user->fk_idPerfil != 3){
+                $this->router->redirect("app.denied");
+            }
+        }else{
             $this->router->redirect("web.login");
         }
     }
@@ -23,4 +29,5 @@ class Admin extends Controller{
             "title" => "ADM | Perfis",
         ]);
     }
+
 }

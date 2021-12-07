@@ -30,7 +30,6 @@ $router->group(null);
 $router->post("/auth", "Auth:login", "auth.login");
 $router->post("/register", "Auth:register", "auth.register");
 
-
 /**
  * Admin
  */
@@ -39,13 +38,13 @@ $router->group("admin");
 $router->get("/dashboard", "Admin:dashboard");
 $router->get("/perfis", "Admin:perfis");
 
-
 /*
  *Errors
  */
 
 $router->group("ooops");
 $router->get("/{errcode}", "App:error");
+$router->get("/denied", "App:denied", "app.denied");
 
 $router->dispatch();
 
