@@ -351,6 +351,7 @@
 
 
 <?php $v->start("scripts");?>
-<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="<?= asset("/js/swiper.js")?>"></script>
 <?php $v->end();?>

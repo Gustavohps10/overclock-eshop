@@ -13,7 +13,7 @@ class Admin extends Controller{
     }
     
     public function dashboard(){
-        echo $this->view->render("dashboard", [
+        echo $this->view->render("theme/admin/dashboard", [
             "title" => "ADM | Dashboard",
         ]);
     }

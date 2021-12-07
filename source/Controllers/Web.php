@@ -7,24 +7,19 @@ class Web extends Controller{
         parent::__construct($router);
 
         if(!empty($_SESSION["user"])){
-            $this->router->redirect("web.login");
+            $this->router->redirect("app.home");
         }
     }
 
     public function login(){
-        echo "<h1>TESTE</h1>";
-    }
-
-    public function home(){
-        echo $this->view->render("theme/app/home", [
-            "title" => "INICIO | ". "TESTE",
+        echo $this->view->render("theme/app/login", [
+            "title" => "LOGIN | ". site("name"),
         ]);
     }
-    
-    public function error(array $data){
-        echo $this->view->render("theme/app/error", [
-            "error" => "$data[errcode]",
-            "title" => "ERRO | ". site("name"),
+
+    public function register(){
+        echo $this->view->render("theme/app/register", [
+            "title" => site("name")." | CADASTRAR",
         ]);
     }
 }
