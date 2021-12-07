@@ -28,9 +28,22 @@
             <nav class="nav-user">
                 <i class="fas fa-caret-up arrow"></i>
                 <ul>
+                    <?php 
+                        if(empty($_SESSION["user"])):
+                    ?>
                     <li><a href="<?= $router->route('web.login')?>"><i class="fas fa-sign-in-alt"></i>Login / Registrar</a></li>
                     <li><a href="#"><i class="fas fa-heart"></i>Meus Favoritos</a></li>
                     <li><a href="#"><i class="fas fa-question-circle"></i>Suporte</a></li>
+                    <?php 
+                        else:
+                    ?>
+                    <li><a href="<?= '#'?>"><i class="far fa-user-circle"></i>Minha Conta</a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i>Meus Favoritos</a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i>Suporte</a></li>
+                    <li><a href="<?= $router->route("app.logoff")?>"><i class="fas fa-door-open"></i>Sair</a></li>
+                    <?php 
+                        endif;
+                    ?>
                 </ul>
             </nav>
         </div>
@@ -79,7 +92,7 @@
         </div>
         <div class="credit">Copyright @ 2021 by <span>Gustavo Henrique</span></div>
     </footer>
-
+    
     <?= $v->section("scripts");?>
     <script src="<?= asset("/js/script.js")?>"></script>
 </body>
