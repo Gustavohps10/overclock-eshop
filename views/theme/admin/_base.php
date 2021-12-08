@@ -18,8 +18,8 @@
             <div class="box">
                 <ul>
                     <li class="title">Main</li>
-                    <li><a href="dashboard.php"><i class="fas fa-home"></i>Home</a></li>
-                    <li><a href="perfil.php"><i class="far fa-id-card"></i>Perfis</a></li>
+                    <li><a href="<?= $router->route('admin.dashboard')?>"><i class="fas fa-home"></i>Home</a></li>
+                    <li><a href="<?= $router->route('admin.profiles')?>"><i class="far fa-id-card"></i>Perfis</a></li>
                     <li><a href="#"><i class="fas fa-users"></i>Usuários</a></li>
                     <li><a href="#"><i class="fas fa-box-open"></i>Produtos</a></li>
                 </ul>

@@ -33,10 +33,18 @@ $router->post("/register", "Auth:register", "auth.register");
 /**
  * Admin
  */
-
 $router->group("admin");
-$router->get("/dashboard", "Admin:dashboard");
-$router->get("/perfis", "Admin:perfis");
+$router->get("/dashboard", "Admin:dashboard", "admin.dashboard");
+$router->get("/perfil", "Admin:profiles",  "admin.profiles");
+$router->get("/perfil/cadastrar", "Admin:addProfile",  "admin.addProfile");
+$router->get("/perfil/editar/{id}", "Admin:editProfile",  "admin.editProfile");
+
+/**
+ * Admin - Crud 
+ */
+$router->post("/perfil/addProfile", "Crud:addProfile", "crud.addProfile");
+$router->post("/perfil/editProfile", "Crud:editProfile", "crud.editProfile");
+$router->post("/perfil/deleteProfile", "Crud:deleteProfile", "crud.deleteProfile");
 
 /*
  *Errors

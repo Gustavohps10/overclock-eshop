@@ -2,6 +2,7 @@
 
 namespace Source\Controllers;
 use Source\Models\Usuario;
+use Source\Models\Perfil;
 
 class Admin extends Controller{
     protected $user;
@@ -24,10 +25,33 @@ class Admin extends Controller{
         ]);
     }
 
-    public function perfis($data){
-        echo $this->view->render("perfis", [
+    public function profiles($data){
+        $perfil = new Perfil();
+        $perfis = $perfil->find()->fetch(true);
+        echo $this->view->render("theme/admin/profiles", [
             "title" => "ADM | Perfis",
+            "perfis" => $perfis
         ]);
     }
+
+    public function addProfile(){
+        echo $this->view->render("theme/admin/formProfile", [
+            "title" => "ADM | Perfis",
+            "buttonName" => "CADASTRAR",
+            "formName" => "Adicionar Perfil"
+        ]);
+    }
+
+    public function editProfile($data){
+        $perfil = (new Perfil())->findById($data["id"]);
+
+        echo $this->view->render("theme/admin/formProfile", [
+            "title" => "ADM | Editar Perfil",
+            "perfil" => $perfil,
+            "buttonName" => "EDITAR",
+            "formName" => "Editar Perfil"
+        ]);
+    }
+
 
 }
