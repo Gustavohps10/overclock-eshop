@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '952848475e530d46dc7f96fe09d2aaffe13a19dc',
+        'reference' => '053203f7ac0ca5ff621e09ee138fdeba8bc4d8fa',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '952848475e530d46dc7f96fe09d2aaffe13a19dc',
+            'reference' => '053203f7ac0ca5ff621e09ee138fdeba8bc4d8fa',
             'dev_requirement' => false,
         ),
         'coffeecode/datalayer' => array(

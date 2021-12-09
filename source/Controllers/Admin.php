@@ -3,6 +3,7 @@
 namespace Source\Controllers;
 use Source\Models\Usuario;
 use Source\Models\Perfil;
+use Source\Models\Produto;
 
 class Admin extends Controller{
     protected $user;
@@ -53,5 +54,32 @@ class Admin extends Controller{
         ]);
     }
 
+    public function products(){
+        $produto = new Produto();
+        $produtos = $produto->find()->fetch(true);
+        echo $this->view->render("theme/admin/products", [
+            "title" => "ADM | Produtos",
+            "produtos" => $produtos
+        ]);
+    }
+
+    public function addProduct(){
+        echo $this->view->render("theme/admin/formProduct", [
+            "title" => "ADM | Produtos",
+            "buttonName" => "CADASTRAR",
+            "formName" => "Adicionar Produto"
+        ]);
+    }
+
+    public function editProduct($data){
+        $produto = (new Produto())->findById($data["id"]);
+
+        echo $this->view->render("theme/admin/formProduct", [
+            "title" => "ADM | Editar Produto",
+            "produto" => $produto,
+            "buttonName" => "EDITAR",
+            "formName" => "Editar Produto"
+        ]);
+    }
 
 }

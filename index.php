@@ -35,16 +35,30 @@ $router->post("/register", "Auth:register", "auth.register");
  */
 $router->group("admin");
 $router->get("/dashboard", "Admin:dashboard", "admin.dashboard");
+
+//---Perfis
 $router->get("/perfil", "Admin:profiles",  "admin.profiles");
 $router->get("/perfil/cadastrar", "Admin:addProfile",  "admin.addProfile");
 $router->get("/perfil/editar/{id}", "Admin:editProfile",  "admin.editProfile");
 
+//---Produtos
+$router->get("/produto", "Admin:products",  "admin.products");
+$router->get("/produto/cadastrar", "Admin:addProduct",  "admin.addProduct");
+$router->get("/produto/editar/{id}", "Admin:editProduct",  "admin.editProduct");
+
 /**
  * Admin - Crud 
  */
+
+//---Perfis
 $router->post("/perfil/addProfile", "Crud:addProfile", "crud.addProfile");
 $router->post("/perfil/editProfile", "Crud:editProfile", "crud.editProfile");
 $router->post("/perfil/deleteProfile", "Crud:deleteProfile", "crud.deleteProfile");
+
+//---Produtos
+$router->post("/produto/addProduct", "Crud:addProduct", "crud.addProduct");
+$router->post("/produto/editProduct", "Crud:editProduct", "crud.editProduct");
+$router->post("/produto/deleteProduct", "Crud:deleteProduct", "crud.deleteProduct");
 
 /*
  *Errors
