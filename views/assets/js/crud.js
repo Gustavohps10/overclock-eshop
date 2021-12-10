@@ -3,12 +3,6 @@ let table = new RdataTB('myTable');
 
 let tableRow = document.querySelector("#C tbody tr td");
 
-let buttons = [
-    {id: "btn-export-csv", text: "EXPORT CSV", type:"button"},
-    {id: "btn-export-json", text: "EXPORT JSON", type:"button"},
-    {id: "btn-register", text: "CADASTRAR", type:"a", href: window.location.href + "/cadastrar"}
-];
-
 buttons.forEach(btn => {
     button = document.createElement(btn.type);
     button.setAttribute("id", btn.id);
@@ -21,9 +15,11 @@ buttons.forEach(btn => {
 });
 
 let btnRegister = document.getElementById('btn-register');
-let iconAdd =  document.createElement('i');
-btnRegister.appendChild(iconAdd);
-iconAdd.setAttribute("class", "fas fa-plus");
+if(btnRegister){
+    let iconAdd =  document.createElement('i');
+    btnRegister.appendChild(iconAdd);
+    iconAdd.setAttribute("class", "fas fa-plus");
+}
 
 let modalClose = document.querySelector('.modal-close');
 document.querySelectorAll('#C td button').forEach(item => {

@@ -82,4 +82,13 @@ class Admin extends Controller{
         ]);
     }
 
+    public function users(){
+        $usuario = new Usuario();
+        $usuarios = $usuario->find("fk_idPerfil = :p", "p=1")->fetch(true);
+        echo $this->view->render("theme/admin/users", [
+            "title" => "ADM | Usuarios",
+            "usuarios" => $usuarios
+        ]);
+    }
+
 }

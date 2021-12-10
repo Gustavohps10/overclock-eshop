@@ -41,6 +41,9 @@ $router->get("/perfil", "Admin:profiles",  "admin.profiles");
 $router->get("/perfil/cadastrar", "Admin:addProfile",  "admin.addProfile");
 $router->get("/perfil/editar/{id}", "Admin:editProfile",  "admin.editProfile");
 
+//---Usuarios
+$router->get("/usuario", "Admin:users",  "admin.users");
+
 //---Produtos
 $router->get("/produto", "Admin:products",  "admin.products");
 $router->get("/produto/cadastrar", "Admin:addProduct",  "admin.addProduct");

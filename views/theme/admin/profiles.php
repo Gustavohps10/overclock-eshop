@@ -55,5 +55,12 @@
    
 <?php $v->start("scripts");?>
     <script src="https://cdn.jsdelivr.net/gh/Rakhmadi/RdataTB@master/dist/index.js"></script>
+    <script>
+        let buttons = [
+            {id: "btn-export-csv", text: "EXPORT CSV", type:"button"},
+            {id: "btn-export-json", text: "EXPORT JSON", type:"button"},
+            {id: "btn-register", text: "CADASTRAR", type:"a", href: window.location.href + "/cadastrar"}
+        ];
+    </script>
     <script src="<?= asset("/js/crud.js")?>"></script>
 <?php $v->end()?>
