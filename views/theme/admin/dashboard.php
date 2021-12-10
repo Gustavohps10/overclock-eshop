@@ -1,4 +1,4 @@
-<?php $v->layout("_base");?>
+<?php $v->layout("theme/admin/_base");?>
 
 <?php $v->start("head");?>
     <link rel="stylesheet" href="<?=asset("/css/dashboard.css"); ?>">
@@ -109,6 +109,6 @@
 <?php $v->start("scripts");?>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-    <script src="<?= url("static//libs/morris.min.js");?>"></script>
-    <script src="<?= url("static/js/dashboard.js");?>"></script>
+    <script src="<?= asset("/libs/morris.min.js");?>"></script>
+    <script src="<?= asset("js/dashboard.js");?>"></script>
 <?php $v->end();?>
