@@ -2,6 +2,7 @@
 
 namespace Source\Controllers;
 use Source\Models\Usuario;
+use Source\Models\Produto;
 
 class App extends Controller{
     protected $user;
@@ -16,9 +17,12 @@ class App extends Controller{
     }
 
     public function home(){
+        $novosProdutos = (new Produto)->find("ativo = :a", "a=1")->order("idProduto DESC")->limit(12)->fetch(true);
+
         echo $this->view->render("theme/app/home", [
             "title" => "INICIO | ". "TESTE",
-            "user" => $this->user
+            "user" => $this->user,
+            "novosProdutos" => $novosProdutos
         ]);
     }
 

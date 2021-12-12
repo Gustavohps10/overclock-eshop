@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
 
 :root{
-    --green: #27ae60;
+    --blue: #207fd1;
     --black: #192a56;
     --light-color: #666;
     --box-shadow:0 .5rem 1.5rem rgba(0,0,0,0.1);
@@ -36,7 +36,7 @@ section:nth-child(even){
 
 .sub-heading{
     text-align: center;
-    color: var(--green);
+    color: var(--blue);
     font-size: 2rem;
     padding-top: 1rem;
 }
@@ -61,7 +61,7 @@ section:nth-child(even){
 }
 
 .btn:hover{
-    background: var(--green);
+    background: var(--blue);
 }
 
 header{
@@ -78,14 +78,8 @@ header{
     box-shadow: var(--box-shadow) ;
 }
 
-header .logo{
-    color: var(--black);
-    font-size: 2.5rem;
-    font-weight: bolder;
-}
-
-header .logo i{
-    color: var(--green);
+header a img{
+    height: 50px;
 }
 
 header .navbar a{
@@ -98,7 +92,7 @@ header .navbar a{
 header .navbar a.active,
 header .navbar a:hover{
     color: #fff;
-    background: var(--green);
+    background: var(--blue);
 }
 header .icons{
     position: relative;
@@ -119,7 +113,7 @@ header .icons .item{
 
 header .icons .item:hover{
     color: #fff;
-    background: var(--green);
+    background: var(--blue);
     transform: rotate(360deg);
 }
 
@@ -228,7 +222,6 @@ header .icons #menu-bars{
     -webkit-appearance: none;
 }
 
-
 #search-form label{
     color: #fff;
     cursor: pointer;
@@ -236,7 +229,7 @@ header .icons #menu-bars{
 }
 
 #search-form label:hover{
-    color: var(--green);
+    color: var(--blue);
 }
 
 #search-form #close{
@@ -248,54 +241,65 @@ header .icons #menu-bars{
     font-size: 5rem;
 }
 
+.home{
+    padding-top: 7rem;
+}
+
+.home .home-slider .slide#banner-1{
+    background: url(../images/banners/banner-1.png);
+    background-repeat: round;
+}
+.home .home-slider .slide#banner-2{
+    background: url(../images/banners/banner-2.png);
+    background-repeat: round;
+}
+.home .home-slider .slide#banner-3{
+    background: url(../images/banners/banner-3.jpg);
+    background-repeat: round;
+}
+
+
 .home .home-slider .slide{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap: 2rem;
     padding-top: 9rem;
+    height: 40rem;
 }
 
 .home .home-slider .slide .content{
-    flex:1 1 45rem;
-}
-
-
-.home .home-slider .slide .image{
-    flex:1 1 45rem;
-}
-
-.home .home-slider .slide .image img{
-    width: 100%;
+    max-width: 33%;
+    margin-left: 2rem;
 }
 
 .home .home-slider .slide .content span{
-    color: var(--green);
+    color: var(--blue);
     font-size: 2.5rem;
 }
 
 .home .home-slider .slide .content h3{
-    color: var(--black);
-    font-size: 7rem;
+    color: #fff;
+    font-size: 4rem;
 }
 
 .home .home-slider .slide .content p{
-    color: var(--light-color);
-    font-size: 2.2rem;
+    color: #bbb;
+    font-size: 1.5rem;
     padding: .5rem 0;
     line-height: 1.5;
 }
 
 .swiper-pagination-bullet-active{
-    background: var(--green);
+    background: var(--blue);
 }
 
-.dishes .box-container{
+.new-products .box-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
     gap: 1.5rem;
 }
-.dishes .box-container .box{
+.new-products .box-container .box{
     padding:2.5rem;
     background: #fff;
     border-radius: .5rem;
@@ -306,8 +310,8 @@ header .icons #menu-bars{
     text-align: center;
 }
 
-.dishes .box-container .box .fa-heart,
-.dishes .box-container .box .fa-eye{
+.new-products .box-container .box .fa-heart,
+.new-products .box-container .box .fa-eye{
     position: absolute;
     top: 1.5rem;
     background: #eee;
@@ -319,53 +323,58 @@ header .icons #menu-bars{
     color: var(--black);
 }
 
-.dishes .box-container .box .fa-heart:hover,
-.dishes .box-container .box .fa-eye:hover{
-    background: var(--green);
+.new-products .box-container .box .fa-heart:hover,
+.new-products .box-container .box .fa-eye:hover{
+    background: var(--blue);
     color: #fff;
 }
 
-.dishes .box-container .box .fa-heart{
+.new-products .box-container .box .fa-heart{
     right: -15rem;
 }
 
-.dishes .box-container .box .fa-eye{
+.new-products .box-container .box .fa-eye{
     left: -15rem;
 }
 
-.dishes .box-container .box:hover .fa-heart{
+.new-products .box-container .box:hover .fa-heart{
     right: 1.5rem;
 }
 
-.dishes .box-container .box:hover .fa-eye{
+.new-products .box-container .box:hover .fa-eye{
     left: 1.5rem;
 }
 
-.dishes .box-container .box img{
+.new-products .box-container .box img{
     height: 17rem;
     margin: 1rem 0;
 }
 
-.dishes .box-container .box h3{
+.new-products .box-container .box h3{
     color: var(--black);
     font-size: 2.5rem;
 
 }
 
-.dishes .box-container .box .stars{
+.new-products .box-container .box .stars{
     padding: 1rem 0;
 }
 
-.dishes .box-container .box .stars i{
+.new-products .box-container .box .stars i{
     font-size: 1.7rem;
-    color: var(--green);
+    color: var(--blue);
 }
 
-.dishes .box-container .box span{
-    color: var(--green);
+.new-products .box-container .box .price{
+    color: var(--blue);
     font-weight: bolder;
     margin-right: 1rem;
     font-size: 2.5rem;
+}
+
+.new-products .box-container .box .installment-price{
+    font-size: 1.3rem;
+    font-weight: 600;
 }
 
 .about .row{
@@ -376,7 +385,7 @@ header .icons #menu-bars{
 }
 
 .about .row .image{
-    flex: 1 1 45rem;
+    flex: 1 1 55rem;
 }
 
 .about .row .image img{
@@ -421,7 +430,7 @@ header .icons #menu-bars{
 
 .about .row .content .icons-container .icons i{
     font-size: 2.5rem;
-    color: var(--green);
+    color: var(--blue);
 }
 
 .about .row .content .icons-container .icons span{
@@ -436,35 +445,34 @@ header .icons #menu-bars{
     text-align: center;
 }
 
-.menu .box-container{
+.pc-categories .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 1.5rem;
 }
 
-.menu .box-container .box{
+.pc-categories .box-container .box{
     background: #fff;
     border: .1rem solid rgba(0,0,0,.2);
     border-radius: .5rem;
     box-shadow: var(--box-shadow);
 }
 
-.menu .box-container .box .image{
+.pc-categories .box-container .box .image{
     height: 25rem;
     width: 100%;
     padding: 1.5rem;
     overflow: hidden;
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 
-.menu .box-container .box .image img{
+.pc-categories .box-container .box .image img{
     height: 100%;
-    width: 100%;
-    border-radius: .5rem;
-
 }
 
-.menu .box-container .box .image .fa-heart{
+.pc-categories .box-container .box .image .fa-heart{
     position: absolute;
     top: 2.5rem;
     right: 2.5rem;
@@ -478,41 +486,41 @@ header .icons #menu-bars{
     color: var(--black);
 }
 
-.menu .box-container .box .image .fa-heart:hover{
-    background-color: var(--green);
+.pc-categories .box-container .box .image .fa-heart:hover{
+    background-color: var(--blue);
     color: #fff;
 }
 
-.menu .box-container .box .content{
+.pc-categories .box-container .box .content{
     padding: 2rem;
     padding-top: 0;
 }
 
-.menu .box-container .box .content .stars{
+.pc-categories .box-container .box .content .stars{
     padding-bottom: 1rem;
 }
 
-.menu .box-container .box .content .stars i{
+.pc-categories .box-container .box .content .stars i{
     font-size: 1.7rem;
-    color: var(--green);
+    color: var(--blue);
 }
 
-.menu .box-container .box .content h3{
+.pc-categories .box-container .box .content h3{
     color: var(--black);
     font-size: 2.5rem;  
 }
 
-.menu .box-container .box .content p{
+.pc-categories .box-container .box .content p{
     color: var(--light-color);
     font-size: 1.6rem;
     padding: .5rem 0;
     line-height: 1.5;
 }
 
-.menu .box-container .box .content .price{
-    color: var(--green);
-    margin-left: 1rem;
-    font-size: 2.5rem;
+.pc-categories .box-container .box .content .price{
+    color: var(--blue);
+    font-size: 2rem;
+    font-weight: 600;
 }
 
 .review .slide{
@@ -553,7 +561,7 @@ header .icons #menu-bars{
 
 .review .slide .user  i{
     font-size: 1.3rem;
-    color: var(--green);
+    color: var(--blue);
 }
 
 .review .slide p{
@@ -582,7 +590,7 @@ footer .box-container .box a{
 }
 
 footer .box-container .box a:hover{
-    color: var(--green);
+    color: var(--blue);
     text-decoration: underline;
 }
 
@@ -601,7 +609,7 @@ footer .credit{
 }
 
 footer .credit span{
-    color: var(--green);
+    color: var(--blue);
 }
 
 /*-----media queries-----*/
