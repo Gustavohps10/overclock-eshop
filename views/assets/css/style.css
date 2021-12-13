@@ -299,6 +299,7 @@ header .icons #menu-bars{
     grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
     gap: 1.5rem;
 }
+
 .new-products .box-container .box{
     padding:2.5rem;
     background: #fff;
@@ -345,12 +346,12 @@ header .icons #menu-bars{
     left: 1.5rem;
 }
 
-.new-products .box-container .box img{
+.new-products .box-container .box img, .products .list-products .product img{
     height: 17rem;
     margin: 1rem 0;
 }
 
-.new-products .box-container .box h3{
+.new-products .box-container .box h3, .products .list-products .product h3{
     color: var(--black);
     font-size: 2.5rem;
 
@@ -365,14 +366,14 @@ header .icons #menu-bars{
     color: var(--blue);
 }
 
-.new-products .box-container .box .price{
+.new-products .box-container .box .price, .products .list-products .product .price{
     color: var(--blue);
     font-weight: bolder;
     margin-right: 1rem;
     font-size: 2.5rem;
 }
 
-.new-products .box-container .box .installment-price{
+.new-products .box-container .box .installment-price, .products .list-products .product .installment-price{
     font-size: 1.3rem;
     font-weight: 600;
 }
@@ -610,6 +611,45 @@ footer .credit{
 
 footer .credit span{
     color: var(--blue);
+}
+.products .not-found{
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.products .products-filters{
+    padding-top: 7rem;
+    margin-bottom: 3rem;
+}
+
+.products .products-filters span{
+    color: var(--blue);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.products .list-products{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 26rem));
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.products .list-products .product{
+    width: 100%;
+    padding:2.5rem;
+    background: #fff;
+    border-radius: .5rem;
+    border: .1rem solid rgba(0,0,0,.2);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+.products .list-products .product .sold-off{
+    padding: .7rem 4rem;
+    background-color: var(--blue);
+    font-size: 1.5rem;
+    color: white;
 }
 
 /*-----media queries-----*/

@@ -47,4 +47,18 @@ class App extends Controller{
             "title" => "ACESSO NEGADO! | ". site("name"),
         ]);
     }
+
+    public function search(){
+        if(empty($_GET["str"])){
+            $this->router->redirect("app.home");
+        }else{
+            $search = $_GET["str"];
+        }
+        $produtos = (new Produto())->find("nome LIKE '%$search%'")->order("ativo DESC")->fetch(true);
+        echo $this->view->render("theme/app/search", [
+            "title" => "Busca : " . $search . " - " . site("name"), 
+            "produtos" => $produtos,
+            "str" => $search
+        ]);
+    }
 }

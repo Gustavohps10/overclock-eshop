@@ -51,8 +51,8 @@
         </div>
     </header>
 
-    <form action="#" method="get" id="search-form">
-        <input type="search" placeholder="Procurar" name="search" id="search-box">
+    <form action="<?= $router->route("app.search")?>" method="get" id="search-form">
+        <input type="search" placeholder="Procurar" name="str" id="search-box">
         <label for="search-box" class="fas fa-search"></label>
         <i class="fas fa-times" id="close"></i>
     </form>

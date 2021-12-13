@@ -14,6 +14,7 @@ $router->namespace("Source\Controllers");
 $router->group(null);
 $router->get("/", "App:home", "app.home");
 $router->get("/sair", "App:logoff", "app.logoff");
+$router->get("/busca", "App:search", "app.search");
 
 /*
  *Web
