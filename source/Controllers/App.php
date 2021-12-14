@@ -2,6 +2,7 @@
 
 namespace Source\Controllers;
 use Source\Models\Usuario;
+use Source\Models\Produto;
 
 class App extends Controller{
     protected $user;
@@ -16,9 +17,12 @@ class App extends Controller{
     }
 
     public function home(){
+        $novosProdutos = (new Produto)->find("ativo = :a", "a=1")->order("idProduto DESC")->limit(12)->fetch(true);
+
         echo $this->view->render("theme/app/home", [
             "title" => "INICIO | ". "TESTE",
-            "user" => $this->user
+            "user" => $this->user,
+            "novosProdutos" => $novosProdutos
         ]);
     }
 
@@ -41,6 +45,31 @@ class App extends Controller{
     public function denied(){
         echo $this->view->render("theme/app/denied", [
             "title" => "ACESSO NEGADO! | ". site("name"),
+        ]);
+    }
+
+    public function search(){
+        if(empty($_GET["str"])){
+            $this->router->redirect("app.home");
+        }else{
+            $search = $_GET["str"];
+        }
+        $produtos = (new Produto())->find("nome LIKE '%$search%'")->order("ativo DESC")->fetch(true);
+        echo $this->view->render("theme/app/search", [
+            "title" => "Busca : " . $search . " - " . site("name"), 
+            "produtos" => $produtos,
+            "str" => $search
+        ]);
+    }
+
+    public function productDetail($data){
+        if(!filter_var($data["id"], FILTER_VALIDATE_INT) || !$produto = (new Produto())->findById($data["id"])){
+            $this->router->redirect("app.error", ["errcode" => "404"]);
+        }
+        
+        echo $this->view->render("theme/app/product", [
+            "title" => "PRODUTO : ". site("name"),
+            "produto" => $produto
         ]);
     }
 }

@@ -11,13 +11,15 @@
 </head>
 <body>
     <header>
-        <a href="#logo" class="logo"><i class="fas fa-utensils"></i>REST</a>
+        <a href="#logo" class="logo">
+            <img src="<?= asset("/images/logo.png")?>" alt="">
+        </a>
         <nav class="navbar">
             <a href="#home" class="active">Home</a>
-            <a href="#dishes">Dishes</a>
-            <a href="#about">About</a>
-            <a href="#menu">Menu</a>
-            <a href="#review">Review</a>
+            <a href="#new-products">Novos</a>
+            <a href="#pc-categories">PCs</a>
+            <a href="#about">Sobre</a>
+            <a href="#review">Comentários</a>
         </nav>
 
         <div class="icons">
@@ -49,8 +51,8 @@
         </div>
     </header>
 
-    <form action="#" method="get" id="search-form">
-        <input type="search" placeholder="search" name="search" id="search-box">
+    <form action="<?= $router->route("app.search")?>" method="get" id="search-form">
+        <input type="search" placeholder="Procurar" name="str" id="search-box">
         <label for="search-box" class="fas fa-search"></label>
         <i class="fas fa-times" id="close"></i>
     </form>
@@ -68,11 +70,11 @@
             </div>
             <div class="box">
                 <h3>quick links</h3>
-                <a href="#">home</a>
-                <a href="#">dishes</a>
-                <a href="#">about</a>
-                <a href="#">menu</a>
-                <a href="#">review</a>
+                <a href="#home" class="active">Home</a>
+                <a href="#new-products">Novos</a>
+                <a href="#pc-categories">PCs</a>
+                <a href="#about">Sobre</a>
+                <a href="#review">Comentários</a>
             </div>
             <div class="box">
                 <h3>contact info</h3>
