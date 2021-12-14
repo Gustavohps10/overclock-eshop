@@ -61,4 +61,15 @@ class App extends Controller{
             "str" => $search
         ]);
     }
+
+    public function productDetail($data){
+        if(!filter_var($data["id"], FILTER_VALIDATE_INT) || !$produto = (new Produto())->findById($data["id"])){
+            $this->router->redirect("app.error", ["errcode" => "404"]);
+        }
+        
+        echo $this->view->render("theme/app/product", [
+            "title" => "PRODUTO : ". site("name"),
+            "produto" => $produto
+        ]);
+    }
 }

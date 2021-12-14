@@ -45,7 +45,7 @@
             ?>
             <div class="box">
                 <a href="#" class="fas fa-heart"></a>
-                <a href="#" class="fas fa-eye"></a>
+                <a href="<?=$router->route("app.productDetail", ["id" => $produto->idProduto])?>" class="fas fa-eye"></a>
                 <img src="<?=asset("images/products/".$produto->imagem)?>" alt="">
                 <h3><?=$produto->nome?></h3>
                 <div class="stars">

@@ -18,11 +18,13 @@
                 $valorProduto = 'R$'.number_format($produto->valor, 2, ',', '.');
             ?>
             <div class="product">
-                <img src="<?=asset("images/products/".$produto->imagem)?>" alt="">
+                <a href="<?=$router->route("app.productDetail", ["id" => $produto->idProduto])?>">
+                    <img src="<?=asset("images/products/".$produto->imagem)?>" alt="">
+                </a>
                 <h3><?=$produto->nome?></h3>
 
                 <?php
-                if($produto->ativo):
+                if($produto->ativo && $produto->quantidade > 0):
                 ?>
                 <span class="price"><?= $valorProduto?></span><br>
                 <span class="installment-price">10x de 00,00 sem juros</span>
