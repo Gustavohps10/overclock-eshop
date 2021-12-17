@@ -33,7 +33,7 @@
         <?php
         if($produto->ativo && $produto->quantidade > 0):
         ?>
-        <a href="#">COMPRAR <i class="fas fa-shopping-cart"></i></a>
+        <a href="" data-action="<?= $router->route("cart.add", ["id" => $produto->idProduto])?>">COMPRAR <i class="fas fa-shopping-cart"></i></a>
         <?php
         else:
         ?>
@@ -47,3 +47,18 @@
     <h1>DESCRIÇÃO</h1>
     <p><?=nl2br($produto->descricao)?></p>
 </section>
+
+<?php $v->start("scripts");?>
+<script>
+    $('[data-action]').on("click",function(e) {
+        e.preventDefault();
+        $.ajax({
+            method: 'post',
+            url: $(this).data('action'),
+            success: function (){
+                window.location.href = "<?= $router->route("app.order"); ?>";
+            }
+        });
+    });
+</script>
+<?php $v->end();?>

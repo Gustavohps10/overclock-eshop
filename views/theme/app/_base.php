@@ -95,6 +95,7 @@
         <div class="credit">Copyright @ 2021 by <span>Gustavo Henrique</span></div>
     </footer>
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <?= $v->section("scripts");?>
     <script src="<?= asset("/js/script.js")?>"></script>
 </body>

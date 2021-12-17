@@ -17,7 +17,7 @@ class App extends Controller{
     }
 
     public function home(){
-        $novosProdutos = (new Produto)->find("ativo = :a", "a=1")->order("idProduto DESC")->limit(12)->fetch(true);
+        $novosProdutos = (new Produto)->find("ativo = 1 AND quantidade > 0")->order("idProduto DESC")->limit(12)->fetch(true);
 
         echo $this->view->render("theme/app/home", [
             "title" => "INICIO | ". "TESTE",
@@ -71,5 +71,13 @@ class App extends Controller{
             "title" => "PRODUTO : ". site("name"),
             "produto" => $produto
         ]);
+    }
+
+    public function order(){
+        if(!empty($_SESSION["cart"])){
+           var_dump($_SESSION["cart"]); 
+        }else{
+            var_dump(false);
+        }
     }
 }

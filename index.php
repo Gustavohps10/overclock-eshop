@@ -16,6 +16,16 @@ $router->get("/", "App:home", "app.home");
 $router->get("/sair", "App:logoff", "app.logoff");
 $router->get("/busca", "App:search", "app.search");
 $router->get("/produto/{id}", "App:productDetail", "app.productDetail");
+$router->get("/carrinho", "App:order", "app.order");
+
+/**
+ * Cart
+ */
+$router->group("/cart");
+$router->post("/", "WebCart:cart", "cart.cart");
+$router->post("/add/{id}", "WebCart:add", "cart.add");
+$router->post("/remove/{id}", "WebCart:remove", "cart.remove");
+$router->post("/clear", "WebCart:clear", "cart.clear");
 
 /*
  *Web
