@@ -57,7 +57,7 @@
                 </div>
                 <span class="price"><?= $valorProduto?></span><br>
                 <span class="installment-price">10x de 00,00 sem juros</span>
-                <a href="#" class="btn">Comprar <i class="fas fa-shopping-cart"></i></a>
+                <a href="" data-action="<?= $router->route("cart.add", ["id" => $produto->idProduto])?>" class="btn">Comprar <i class="fas fa-shopping-cart"></i></a>
             </div>
             <?php
             endforeach;
@@ -271,4 +271,16 @@
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="<?= asset("/js/swiper.js")?>"></script>
+    <script>
+        $('[data-action]').on("click",function(e) {
+            e.preventDefault();
+            $.ajax({
+                method: 'post',
+                url: $(this).data('action'),
+                success: function (){
+                    window.location.href = "<?= $router->route("app.order"); ?>";
+                }
+            });
+        });
+    </script>
 <?php $v->end();?>

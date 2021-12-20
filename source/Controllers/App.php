@@ -3,6 +3,7 @@
 namespace Source\Controllers;
 use Source\Models\Usuario;
 use Source\Models\Produto;
+use Source\Facades\Cart;
 
 class App extends Controller{
     protected $user;
@@ -17,7 +18,7 @@ class App extends Controller{
     }
 
     public function home(){
-        $novosProdutos = (new Produto)->find("ativo = :a", "a=1")->order("idProduto DESC")->limit(12)->fetch(true);
+        $novosProdutos = (new Produto)->find("ativo = 1 AND quantidade > 0")->order("idProduto DESC")->limit(12)->fetch(true);
 
         echo $this->view->render("theme/app/home", [
             "title" => "INICIO | ". "TESTE",
@@ -70,6 +71,24 @@ class App extends Controller{
         echo $this->view->render("theme/app/product", [
             "title" => "PRODUTO : ". site("name"),
             "produto" => $produto
+        ]);
+    }
+
+    public function order(){
+        $cart = (new Cart())->cart();
+
+        if(!empty($cart["items"])){
+            $items = json_encode($cart["items"], true);
+            $total = $cart["total"];
+        }else{
+            $items = false;
+            $total = false;
+        }
+
+        echo $this->view->render("theme/app/cart", [
+            "title" => "Carrinho de Compras : " . site("name"),
+            "produtosCarrinho" => json_decode($items),
+            "total" => $total
         ]);
     }
 }

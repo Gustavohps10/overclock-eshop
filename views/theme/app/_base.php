@@ -25,7 +25,7 @@
         <div class="icons">
             <i class="item fas fa-bars" id="menu-bars"></i>
             <i class="item fas fa-search" id="search-icon"></i>
-            <a href="#" class="item fas fa-shopping-cart"></a>
+            <a href="<?= $router->route("app.order")?>" class="item fas fa-shopping-cart"></a>
             <i href="#" class="item fas fa-user"></i>
             <nav class="nav-user">
                 <i class="fas fa-caret-up arrow"></i>
@@ -95,6 +95,7 @@
         <div class="credit">Copyright @ 2021 by <span>Gustavo Henrique</span></div>
     </footer>
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <?= $v->section("scripts");?>
     <script src="<?= asset("/js/script.js")?>"></script>
 </body>

@@ -28,7 +28,7 @@
                 ?>
                 <span class="price"><?= $valorProduto?></span><br>
                 <span class="installment-price">10x de 00,00 sem juros</span>
-                <a href="#" class="btn">Comprar <i class="fas fa-shopping-cart"></i></a>
+                <a href="" data-action="<?= $router->route("cart.add", ["id" => $produto->idProduto])?>" class="btn">Comprar <i class="fas fa-shopping-cart"></i></a>
                 <?php
                 else:
                 ?>
@@ -50,3 +50,18 @@
     endif;
     ?>
 </section>
+
+<?php $v->start("scripts");?>
+    <script>
+        $('[data-action]').on("click",function(e) {
+            e.preventDefault();
+            $.ajax({
+                method: 'post',
+                url: $(this).data('action'),
+                success: function (){
+                    window.location.href = "<?= $router->route("app.order"); ?>";
+                }
+            });
+        });
+    </script>
+<?php $v->end();?>
