@@ -3,6 +3,7 @@
 namespace Source\Controllers;
 use Source\Models\Usuario;
 use Source\Models\Produto;
+use Source\Facades\Cart;
 
 class App extends Controller{
     protected $user;
@@ -74,10 +75,20 @@ class App extends Controller{
     }
 
     public function order(){
-        if(!empty($_SESSION["cart"])){
-           var_dump($_SESSION["cart"]); 
+        $cart = (new Cart())->cart();
+
+        if(!empty($cart["items"])){
+            $items = json_encode($cart["items"], true);
+            $total = $cart["total"];
         }else{
-            var_dump(false);
+            $items = false;
+            $total = false;
         }
+
+        echo $this->view->render("theme/app/cart", [
+            "title" => "Carrinho de Compras : " . site("name"),
+            "produtosCarrinho" => json_decode($items),
+            "total" => $total
+        ]);
     }
 }

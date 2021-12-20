@@ -13,7 +13,7 @@ class WebCart extends Controller{
     }
 
     public function cart(){
-
+        echo json_encode($this->cart->cart());
     }
 
     public function add($data){
@@ -25,7 +25,7 @@ class WebCart extends Controller{
         }
 
         $this->cart->add($produto);
-        var_dump($this->cart->cart());
+        echo json_encode($this->cart->cart());
     }
 
     public function remove($data){
@@ -36,10 +36,12 @@ class WebCart extends Controller{
         }
 
         $this->cart->remove($produto);
-        var_dump($this->cart->cart());
+        echo json_encode($this->cart->cart());
+        
     }
 
     public function clear(){
         $this->cart->clear();
+        echo json_encode($this->cart->cart());
     }
 }

@@ -25,7 +25,7 @@
         <div class="icons">
             <i class="item fas fa-bars" id="menu-bars"></i>
             <i class="item fas fa-search" id="search-icon"></i>
-            <a href="#" class="item fas fa-shopping-cart"></a>
+            <a href="<?= $router->route("app.order")?>" class="item fas fa-shopping-cart"></a>
             <i href="#" class="item fas fa-user"></i>
             <nav class="nav-user">
                 <i class="fas fa-caret-up arrow"></i>
