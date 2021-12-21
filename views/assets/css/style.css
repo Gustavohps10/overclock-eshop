@@ -928,6 +928,57 @@ footer .credit span{
     background-color: #1b67aa;
 }
 
+.orders{
+    padding-top: 10rem;
+    background-color: #fff;
+}
+
+.orders .title{
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.orders .item{
+    border-radius: 5px;
+    border: .1rem solid rgba(0,0,0,.2);
+    margin: 2.5rem 0
+}
+
+.orders .item .header{
+    padding: 1.5rem;
+    background-color: rgb(228, 228, 228);
+    border-radius: 5px 5px 0 0;
+}
+
+.orders .item .header h1{
+    font-weight: 500;
+    
+}
+
+.orders .item .header h1 span{
+    color: var(--blue);
+    font-weight: 600;
+    font-size: 1.7rem;
+}
+
+.orders .item .content{
+    background-color: #f1f1f1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    gap: 5rem;
+    padding: 1.5rem;
+    border-radius: 0 0 5px 5px;
+}
+
+.orders .item .content div > span{
+    font-size: 1.5rem;
+    color: #777;
+}
+
+.orders .item .content div > p{
+    font-size: 1.5rem;
+}
+
 /*-----media queries-----*/
 @media (max-width: 991px){
     html{

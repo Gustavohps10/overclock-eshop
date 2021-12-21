@@ -4,6 +4,7 @@ namespace Source\Controllers;
 use Source\Models\Usuario;
 use Source\Models\Produto;
 use Source\Facades\Cart;
+use Source\Facades\Pedido;
 
 class App extends Controller{
     protected $user;
@@ -89,6 +90,20 @@ class App extends Controller{
             "title" => "Carrinho de Compras : " . site("name"),
             "produtosCarrinho" => json_decode($items),
             "total" => $total
+        ]);
+    }
+
+    public function listOrders(){
+        if(empty($_SESSION["user"])){
+            $this->router->redirect("web.login");
+        }
+
+        $usuario = (new Usuario())->findById(intval($_SESSION["user"]));
+        $pedidos = $usuario->orders();
+
+        echo $this->view->render("theme/app/orders", [
+            "title" => "Meus Pedidos : " . site("name"),
+            "pedidos" => $pedidos,
         ]);
     }
 }

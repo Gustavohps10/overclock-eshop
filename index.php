@@ -17,6 +17,7 @@ $router->get("/sair", "App:logoff", "app.logoff");
 $router->get("/busca", "App:search", "app.search");
 $router->get("/produto/{id}", "App:productDetail", "app.productDetail");
 $router->get("/carrinho", "App:order", "app.order");
+$router->get("/MeusPedidos", "App:listOrders", "app.listOrders");
 
 /**
  * Cart

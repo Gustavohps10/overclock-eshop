@@ -73,7 +73,7 @@ class WebCart extends Controller{
                 $produto->save();
             }
             $this->cart->clear();
-            $this->router->redirect("app.home");
+            $this->router->redirect("app.listOrders");
         }else{
             $this->router->redirect("app.order");
         }
