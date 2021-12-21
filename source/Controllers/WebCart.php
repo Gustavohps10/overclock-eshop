@@ -3,6 +3,9 @@
 namespace Source\Controllers;
 use Source\Facades\Cart;
 use Source\Models\Produto;
+use Source\Models\Pedido;
+use Source\Models\PedidoProduto;
+use Source\Models\Usuario;
 
 class WebCart extends Controller{
     private $cart;
@@ -43,5 +46,36 @@ class WebCart extends Controller{
     public function clear(){
         $this->cart->clear();
         echo json_encode($this->cart->cart());
+    }
+
+    public function registerOrder(){
+        if(empty($_SESSION["user"])){
+            $this->router->redirect("web.login");
+            return;
+        }
+
+        $usuario = (new Usuario())->findByid(intval($_SESSION["user"]));
+        $carrinho = $this->cart->cart();
+
+        if(!empty($carrinho) || !empty($carrinho["items"])){
+            $pedido = new Pedido();
+            $pedido->add($usuario, $carrinho["total"]);
+            $pedido->save();
+            
+            foreach ($carrinho["items"] as $item) {
+                $produto = (new Produto())->findById(intval($item["id"]));
+
+                $itemPedido = new PedidoProduto();
+                $itemPedido->add($pedido, $produto, $item["amount"], $item["subtotal"]);
+                $itemPedido->save();
+
+                $produto->quantidade -= $item["amount"];
+                $produto->save();
+            }
+            $this->cart->clear();
+            $this->router->redirect("app.home");
+        }else{
+            $this->router->redirect("app.order");
+        }
     }
 }

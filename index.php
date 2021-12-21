@@ -26,6 +26,7 @@ $router->post("/", "WebCart:cart", "cart.cart");
 $router->post("/add/{id}", "WebCart:add", "cart.add");
 $router->post("/remove/{id}", "WebCart:remove", "cart.remove");
 $router->post("/clear", "WebCart:clear", "cart.clear");
+$router->get("/registerOrder", "WebCart:registerOrder", "cart.registerOrder");
 
 /*
  *Web
@@ -33,7 +34,6 @@ $router->post("/clear", "WebCart:clear", "cart.clear");
 $router->group(null);
 $router->get("/login", "Web:login", "web.login");
 $router->get("/cadastrar", "Web:register", "web.register");
-
 
 /**
  * Auth
