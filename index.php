@@ -17,6 +17,8 @@ $router->get("/sair", "App:logoff", "app.logoff");
 $router->get("/busca", "App:search", "app.search");
 $router->get("/produto/{id}", "App:productDetail", "app.productDetail");
 $router->get("/carrinho", "App:order", "app.order");
+$router->get("/MeusPedidos", "App:listOrders", "app.listOrders");
+$router->get("/MeusPedidos/{id}", "App:detailOrder", "app.detailOrder");
 
 /**
  * Cart
@@ -26,6 +28,7 @@ $router->post("/", "WebCart:cart", "cart.cart");
 $router->post("/add/{id}", "WebCart:add", "cart.add");
 $router->post("/remove/{id}", "WebCart:remove", "cart.remove");
 $router->post("/clear", "WebCart:clear", "cart.clear");
+$router->get("/registerOrder", "WebCart:registerOrder", "cart.registerOrder");
 
 /*
  *Web
@@ -33,7 +36,6 @@ $router->post("/clear", "WebCart:clear", "cart.clear");
 $router->group(null);
 $router->get("/login", "Web:login", "web.login");
 $router->get("/cadastrar", "Web:register", "web.register");
-
 
 /**
  * Auth
