@@ -938,6 +938,12 @@ footer .credit span{
     font-size: 2.5rem;
 }
 
+.orders .no-orders{
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 500;
+}
+
 .orders .item{
     border-radius: 5px;
     margin: 2.5rem 0;

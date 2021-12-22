@@ -2,6 +2,7 @@
 
 <section class="orders">
     <h1 class="title"><i class="fas fa-clipboard-list"></i> Meus Pedidos</h1>
+    <?php if($pedidos):?>
     <div class="items">
         <?php foreach ($pedidos as $pedido):
             $data = date("d/m/Y H:i:s", strtotime($pedido->dataPedido));
@@ -30,4 +31,7 @@
             </div>
         <?php endforeach;?>
     </div>
+    <?php else:?>
+    <h1 class="no-orders">Parece que você ainda não fez nenhum pedido :)</h1>
+    <?php  endif;?>
 </section>
