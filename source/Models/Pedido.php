@@ -17,8 +17,12 @@ class Pedido extends DataLayer{
         return $this;
     }
 
-    public function products(){
+    public function items(){
         return (new PedidoProduto())->find("fk_idPedido = :pid", "pid={$this->idPedido}")->fetch(true);
+    }
+
+    public function user(){
+        return (new Usuario())->findById($this->fk_idUsuario);
     }
 
 }

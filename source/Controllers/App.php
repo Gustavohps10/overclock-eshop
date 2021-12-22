@@ -4,7 +4,7 @@ namespace Source\Controllers;
 use Source\Models\Usuario;
 use Source\Models\Produto;
 use Source\Facades\Cart;
-use Source\Facades\Pedido;
+use Source\Models\Pedido;
 
 class App extends Controller{
     protected $user;
@@ -98,12 +98,39 @@ class App extends Controller{
             $this->router->redirect("web.login");
         }
 
-        $usuario = (new Usuario())->findById(intval($_SESSION["user"]));
-        $pedidos = $usuario->orders();
+        $pedidos = $this->user->orders();
 
         echo $this->view->render("theme/app/orders", [
             "title" => "Meus Pedidos : " . site("name"),
             "pedidos" => $pedidos,
+        ]);
+    }
+
+    public function detailOrder($data){
+        if(empty($_SESSION["user"])){
+            $this->router->redirect("web.login");
+        }
+
+        if (!filter_var($data["id"], FILTER_VALIDATE_INT)) {
+            $this->router->redirect("app.error", ["errcode" => "404"]);
+        }
+
+        $pedido = (new Pedido())->findById(intval($data["id"]));
+
+        if($pedido->fk_idUsuario != $this->user->idUsuario){
+            $this->router->redirect("app.error", ["errcode" => "404"]);
+        }
+        
+        $itensPedido = $pedido->items();
+        $cliente = $pedido->user();
+
+        $pedido->dataPedido = date("d/m/Y H:i:s", strtotime($pedido->dataPedido));
+        
+        echo $this->view->render("theme/app/detailOrder", [
+            "title" => "Meus Pedidos : #".$data["id"]." ". site("name"),
+            "pedido" => $pedido,
+            "itensPedido" => $itensPedido,
+            "cliente" => $cliente
         ]);
     }
 }

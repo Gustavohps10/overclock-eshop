@@ -24,6 +24,9 @@
                         <p><?= $pedido->statusPedido?></p>
                     </div>
                 </div>
+                <div class="footer">
+                    <a href="<?= $router->route("app.detailOrder", ["id" => $pedido->idPedido])?>">Ver Detalhes</a>
+                </div>
             </div>
         <?php endforeach;?>
     </div>

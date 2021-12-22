@@ -15,4 +15,8 @@ class PedidoProduto extends DataLayer{
         $this->subtotal = $subtotal;
         return $this;
     }
+
+    public function product(){
+        return (new Produto())->findById($this->fk_idProduto);
+    }
 }
