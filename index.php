@@ -14,6 +14,7 @@ $router->namespace("Source\Controllers");
 $router->group(null);
 $router->get("/", "App:home", "app.home");
 $router->get("/conta", "App:account", "app.account");
+$router->get("/conta/editar", "App:editAccount", "app.editAccount");
 $router->get("/sair", "App:logoff", "app.logoff");
 $router->get("/busca", "App:search", "app.search");
 $router->get("/produto/{id}", "App:productDetail", "app.productDetail");
@@ -44,6 +45,7 @@ $router->get("/cadastrar", "Web:register", "web.register");
 $router->group(null);
 $router->post("/auth", "Auth:login", "auth.login");
 $router->post("/register", "Auth:register", "auth.register");
+$router->post("/edit", "Auth:edit", "auth.edit");
 
 /**
  * Admin

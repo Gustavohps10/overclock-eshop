@@ -19,7 +19,7 @@
             <span> Username: </span>
             <p>@<?= $usuario->username?></p>
         </div>
-        <a class="btn" href="#"><i class="fas fa-user-edit"></i> Alterar Dados</a>
+        <a class="btn" href="<?= $router->route("app.editAccount")?>"><i class="fas fa-user-edit"></i> Alterar Dados</a>
     </div>
     <h1 class="subtitle">Endereços</h1>
     <div class="address">

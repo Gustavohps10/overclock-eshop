@@ -39,6 +39,17 @@ class App extends Controller{
         ]);
     }
 
+    public function editAccount(){
+        if(empty($_SESSION["user"])){
+            $this->router->redirect("web.login");
+        }
+
+        echo $this->view->render("theme/app/editAccount", [
+            "usuario" => $this->user,
+            "title" => "EDITAR CONTA ".site("name"),
+        ]);
+    }
+
     public function logoff(){
         if(empty($_SESSION["user"])){
             $this->router->redirect("web.login");

@@ -105,3 +105,16 @@
 .register form .form-footer p{
     font-size: 1.3rem;
 }
+
+.hide{
+    display: none;
+}
+
+.register .show-passwd, .register .hide-passwd{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.register .show-passwd:hover, .register .hide-passwd:hover{
+    color: var(--blue);
+}
