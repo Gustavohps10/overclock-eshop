@@ -13,6 +13,7 @@ $router->namespace("Source\Controllers");
  */
 $router->group(null);
 $router->get("/", "App:home", "app.home");
+$router->get("/conta", "App:account", "app.account");
 $router->get("/sair", "App:logoff", "app.logoff");
 $router->get("/busca", "App:search", "app.search");
 $router->get("/produto/{id}", "App:productDetail", "app.productDetail");

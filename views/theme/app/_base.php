@@ -39,7 +39,7 @@
                     <?php 
                         else:
                     ?>
-                    <li><a href="<?= '#'?>"><i class="far fa-user-circle"></i>Minha Conta</a></li>
+                    <li><a href="<?= $router->route("app.account")?>"><i class="far fa-user-circle"></i>Minha Conta</a></li>
                     <li><a href="<?= $router->route("app.listOrders")?>"><i class="fas fa-clipboard-list"></i>Meus Pedidos</a></li>
                     <li><a href="#"><i class="fas fa-heart"></i>Meus Favoritos</a></li>
                     <li><a href="#"><i class="fas fa-question-circle"></i>Suporte</a></li>  

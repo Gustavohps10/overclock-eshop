@@ -28,6 +28,17 @@ class App extends Controller{
         ]);
     }
 
+    public function account(){
+        if(empty($_SESSION["user"])){
+            $this->router->redirect("web.login");
+        }
+
+        echo $this->view->render("theme/app/account", [
+            "usuario" => $this->user,
+            "title" => "CONTA ".site("name"),
+        ]);
+    }
+
     public function logoff(){
         if(empty($_SESSION["user"])){
             $this->router->redirect("web.login");
