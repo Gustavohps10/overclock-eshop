@@ -21,8 +21,27 @@
         </div>
         <a class="btn" href="<?= $router->route("app.editAccount")?>"><i class="fas fa-user-edit"></i> Alterar Dados</a>
     </div>
-    <h1 class="subtitle">Endereços</h1>
-    <div class="address">
-    <a href="#" class="btn"><i class="fas fa-map-marker-alt"></i><i class="fas fa-plus"></i> Novo Endereço</a>
+    <h1 class="subtitle">Principais Endereços</h1>
+    <div class="main-addresses">
+        <?php if(!empty($enderecos)): foreach($enderecos as $endereco):?>
+            <div class="address-container">
+                <h1><i class="fas fa-map-marker-alt"></i> <?= $endereco->nome?></h1>
+                <p><span>Rua: </span><?= $endereco->rua?></p>
+                <p><span>N° da Casa: </span><?= $endereco->numeroCasa?></p>
+                <p><span>Bairro: </span><?= $endereco->bairro?></p>
+                <p><span>Cidade: </span><?= $endereco->cidade?></p>
+                <p><span>Estado: </span><?= $endereco->estado?></p>
+            </div>
+        <?php endforeach; else: ?>
+            <h2>Você ainda não possui endereços cadastrados</h2>
+        <?php endif?>
+        
+        <a class="btn" href="<?= $router->route("address.listAddresses")?>">
+            <i class="fas fa-map-marker"></i>
+            <i class="fas fa-map-marker-alt"></i>
+            <i class="fas fa-map-marker"></i>
+            Ver todos
+        </a>
+        <a href="#" class="btn"><i class="fas fa-map-marker-alt"></i><i class="fas fa-plus"></i> Novo Endereço</a>
     </div>
 </section>

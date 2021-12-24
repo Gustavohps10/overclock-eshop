@@ -23,6 +23,23 @@ $router->get("/MeusPedidos", "App:listOrders", "app.listOrders");
 $router->get("/MeusPedidos/{id}", "App:detailOrder", "app.detailOrder");
 
 /**
+ * Address
+ */
+$router->group("/enderecos");
+$router->get("/", "Address:listAddresses", "address.listAddresses");
+$router->get("/cadastrar", "Address:register", "address.register");
+$router->get("/editar", "Address:edit", "address.edit");
+
+/**
+ * Web Address
+ */
+
+$router->post("/read", "WebAddress:read", "webAddress.read");
+$router->get("/register", "WebAddress:register", "webAddress.register");
+$router->get("/edit", "WebAddress:edit", "webAddress.edit");
+$router->get("/delete", "WebAddress:delete", "webAddress.delete");
+
+/**
  * Cart
  */
 $router->group("/cart");

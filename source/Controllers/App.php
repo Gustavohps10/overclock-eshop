@@ -33,9 +33,11 @@ class App extends Controller{
             $this->router->redirect("web.login");
         }
 
+        $mainAddresses = $this->user->mainAddresses();
         echo $this->view->render("theme/app/account", [
             "usuario" => $this->user,
             "title" => "CONTA ".site("name"),
+            "enderecos" => $mainAddresses
         ]);
     }
 
