@@ -18,7 +18,7 @@
                 </div>
                 <div class="footer">
                     <a href="<?= $router->route("address.edit", ["id" => $endereco->idEndereco])?>" class="btn"><i class="far fa-edit"></i> EDITAR</a>
-                    <a href="#" class="btn"><i class="far fa-trash-alt"></i> DELETAR</a>
+                    <a href="<?= $router->route("webAddress.remove", ["id" => $endereco->idEndereco])?>" class="btn"><i class="far fa-trash-alt"></i> DELETAR</a>
                 </div>    
             </div>
         <?php endforeach; else: ?>

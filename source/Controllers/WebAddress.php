@@ -42,4 +42,14 @@ class WebAddress extends Controller{
         $address->save();      
         $this->router->redirect("address.listAddresses");
     }
+
+    public function remove($data){
+        $address = (new Endereco)->findById(intval($data["id"]));
+        if(!filter_var($data["id"], FILTER_VALIDATE_INT) || !$address || $this->user->idUsuario != $address->user()->idUsuario){
+            $this->router->redirect("app.error", ["errcode" => "404"]);
+        }
+
+        $address->destroy();
+        $this->router->redirect("address.listAddresses");
+    }
 }

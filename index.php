@@ -36,7 +36,7 @@ $router->get("/editar/{id}", "Address:edit", "address.edit");
 
 $router->post("/register", "WebAddress:register", "webAddress.register");
 $router->post("/edit", "WebAddress:edit", "webAddress.edit");
-$router->post("/delete", "WebAddress:delete", "webAddress.delete");
+$router->get("/remove/{id}", "WebAddress:remove", "webAddress.remove");
 
 /**
  * Cart
