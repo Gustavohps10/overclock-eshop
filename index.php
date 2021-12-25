@@ -13,12 +13,30 @@ $router->namespace("Source\Controllers");
  */
 $router->group(null);
 $router->get("/", "App:home", "app.home");
+$router->get("/conta", "App:account", "app.account");
+$router->get("/conta/editar", "App:editAccount", "app.editAccount");
 $router->get("/sair", "App:logoff", "app.logoff");
 $router->get("/busca", "App:search", "app.search");
 $router->get("/produto/{id}", "App:productDetail", "app.productDetail");
 $router->get("/carrinho", "App:order", "app.order");
 $router->get("/MeusPedidos", "App:listOrders", "app.listOrders");
 $router->get("/MeusPedidos/{id}", "App:detailOrder", "app.detailOrder");
+
+/**
+ * Address
+ */
+$router->group("/enderecos");
+$router->get("/", "Address:listAddresses", "address.listAddresses");
+$router->get("/cadastrar", "Address:register", "address.register");
+$router->get("/editar/{id}", "Address:edit", "address.edit");
+
+/**
+ * Web Address
+ */
+
+$router->post("/register", "WebAddress:register", "webAddress.register");
+$router->post("/edit", "WebAddress:edit", "webAddress.edit");
+$router->get("/remove/{id}", "WebAddress:remove", "webAddress.remove");
 
 /**
  * Cart
@@ -43,6 +61,7 @@ $router->get("/cadastrar", "Web:register", "web.register");
 $router->group(null);
 $router->post("/auth", "Auth:login", "auth.login");
 $router->post("/register", "Auth:register", "auth.register");
+$router->post("/edit", "Auth:edit", "auth.edit");
 
 /**
  * Admin

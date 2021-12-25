@@ -105,3 +105,61 @@
 .register form .form-footer p{
     font-size: 1.3rem;
 }
+
+.hide{
+    display: none;
+}
+
+.register .show-passwd, .register .hide-passwd{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.register .show-passwd:hover, .register .hide-passwd:hover{
+    color: var(--blue);
+}
+
+form .checkbox-container{
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+
+form .checkbox-container label{
+    margin-right: .5rem;
+    cursor: pointer;
+}
+
+form input[type="checkbox"]{
+    position: relative;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 2px;
+    border: .2rem solid rgba(0,0,0,.2);
+}
+
+form input[type="checkbox"]::before{
+    content: '';
+    position: absolute;
+    height: 12px;
+    width: 6px;
+    border-right: 4px solid var(--blue);
+    border-bottom: 4px solid var(--blue);
+    opacity: 0;
+    transition: all .2s linear;
+    transform: rotate(45deg);
+    left: 6px;
+    top: 1px;
+}
+
+form input[type="checkbox"]:checked::before{
+    opacity: 1;
+}
+
+#state{
+    text-transform: uppercase;
+}

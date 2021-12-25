@@ -28,6 +28,30 @@ class App extends Controller{
         ]);
     }
 
+    public function account(){
+        if(empty($_SESSION["user"])){
+            $this->router->redirect("web.login");
+        }
+
+        $mainAddresses = $this->user->mainAddresses();
+        echo $this->view->render("theme/app/account", [
+            "usuario" => $this->user,
+            "title" => "CONTA ".site("name"),
+            "enderecos" => $mainAddresses
+        ]);
+    }
+
+    public function editAccount(){
+        if(empty($_SESSION["user"])){
+            $this->router->redirect("web.login");
+        }
+
+        echo $this->view->render("theme/app/editAccount", [
+            "usuario" => $this->user,
+            "title" => "EDITAR CONTA ".site("name"),
+        ]);
+    }
+
     public function logoff(){
         if(empty($_SESSION["user"])){
             $this->router->redirect("web.login");

@@ -42,5 +42,14 @@ class Auth extends Controller{
 
         $this->router->redirect("app.home");
     }
-   
+    
+    public function edit($data){
+        $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
+        $usuario = (new Usuario)->findById(intval($_SESSION["user"]));
+        $usuario->nome = $data['name'];
+        $usuario->username = $data['username'];
+        $usuario->email = $data['email'];
+        $usuario->save();
+        $this->router->redirect("app.account");
+    }
 }
