@@ -28,16 +28,15 @@ $router->get("/MeusPedidos/{id}", "App:detailOrder", "app.detailOrder");
 $router->group("/enderecos");
 $router->get("/", "Address:listAddresses", "address.listAddresses");
 $router->get("/cadastrar", "Address:register", "address.register");
-$router->get("/editar", "Address:edit", "address.edit");
+$router->get("/editar/{id}", "Address:edit", "address.edit");
 
 /**
  * Web Address
  */
 
-$router->post("/read", "WebAddress:read", "webAddress.read");
-$router->get("/register", "WebAddress:register", "webAddress.register");
-$router->get("/edit", "WebAddress:edit", "webAddress.edit");
-$router->get("/delete", "WebAddress:delete", "webAddress.delete");
+$router->post("/register", "WebAddress:register", "webAddress.register");
+$router->post("/edit", "WebAddress:edit", "webAddress.edit");
+$router->post("/delete", "WebAddress:delete", "webAddress.delete");
 
 /**
  * Cart

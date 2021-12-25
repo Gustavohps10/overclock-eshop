@@ -16,7 +16,7 @@
                     <p><span>Estado: </span><?= $endereco->estado?></p>
                 </div>
                 <div class="footer">
-                    <a href="#" class="btn"><i class="far fa-edit"></i> EDITAR</a>
+                    <a href="<?= $router->route("address.edit", ["id" => $endereco->idEndereco])?>" class="btn"><i class="far fa-edit"></i> EDITAR</a>
                     <a href="#" class="btn"><i class="far fa-trash-alt"></i> DELETAR</a>
                 </div>    
             </div>

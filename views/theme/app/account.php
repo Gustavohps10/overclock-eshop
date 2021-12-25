@@ -42,6 +42,6 @@
             <i class="fas fa-map-marker"></i>
             Ver todos
         </a>
-        <a href="#" class="btn"><i class="fas fa-map-marker-alt"></i><i class="fas fa-plus"></i> Novo Endereço</a>
+        <a href="<?= $router->route("address.register")?>" class="btn"><i class="fas fa-map-marker-alt"></i><i class="fas fa-plus"></i> Novo Endereço</a>
     </div>
 </section>

@@ -22,4 +22,22 @@ class Address extends Controller{
             "enderecos" => $addresses
         ]);
     }
+
+    public function edit($data){
+        $address = (new Endereco)->findById(intval($data["id"]));
+    
+        if(!filter_var($data["id"], FILTER_VALIDATE_INT) || !$address || $this->user->idUsuario != $address->user()->idUsuario){
+            $this->router->redirect("app.error", ["errcode" => "404"]);
+        }
+
+        $address->principal = $address->principal ? "checked": "";
+       
+        echo $this->view->render("theme/app/formAddress", [
+            "title" => "Editar endereço",
+            "endereco" => $address,
+            "formName" => "Editar Endereço",
+            "btnName" => "Editar",
+            "formUrl" =>  $this->router->route("webAddress.edit")
+        ]);
+    }
 }
