@@ -40,4 +40,25 @@ class Address extends Controller{
             "formUrl" =>  $this->router->route("webAddress.edit")
         ]);
     }
+
+    public function register(){
+        $address = new \stdClass();
+        $address->nome = "";
+        $address->principal = "";
+        $address->rua = "";
+        $address->estado = "";
+        $address->cidade = "";
+        $address->cep = "";
+        $address->bairro = "";
+        $address->numeroCasa = "";
+        $address->idEndereco = "";
+
+        echo $this->view->render("theme/app/formAddress", [
+            "title" => "Cadastrar endereço",
+            "endereco" => $address,
+            "formName" => "Cadastrar Endereço",
+            "btnName" => "Cadastrar",
+            "formUrl" =>  $this->router->route("webAddress.register")
+        ]);
+    }
 }

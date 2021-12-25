@@ -2,7 +2,8 @@
 
 <section class="addresses">
     <h1 class="title"><i class="fas fa-map-marker-alt"></i> MEUS ENDEREÇOS</h1>
-    <div class="items">
+    <a href="<?= $router->route("address.register")?>" class="btn"><i class="fas fa-plus"></i> Novo</a>
+    <div class="items"> 
         <?php if(!empty($enderecos)): foreach($enderecos as $endereco):?>
             <div class="item">
                 <div class="header">

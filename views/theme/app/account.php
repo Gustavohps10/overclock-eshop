@@ -33,7 +33,7 @@
                 <p><span>Estado: </span><?= $endereco->estado?></p>
             </div>
         <?php endforeach; else: ?>
-            <h2>Você ainda não possui endereços cadastrados</h2>
+            <h2>Você ainda não possui ou não definiu seus endereços principais</h2>
         <?php endif?>
         
         <a class="btn" href="<?= $router->route("address.listAddresses")?>">
