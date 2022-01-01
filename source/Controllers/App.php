@@ -157,4 +157,25 @@ class App extends Controller{
             "cliente" => $cliente
         ]);
     }
+
+    public function checkout(){
+        if(empty($_SESSION["user"])){
+            $this->router->redirect("web.login");
+        }
+
+        $cart = (new Cart())->cart();
+        
+        if (empty($cart["items"])) {
+            $this->router->redirect("app.order");
+        }
+        
+        $items = json_encode($cart["items"], true);
+        $addresses = $this->user->allAddresses();
+
+        echo $this->view->render("theme/app/checkout", [
+            "title" => "Checkout | ". site("name"),
+            "produtosCarrinho" => json_decode($items),
+            "enderecos" => $addresses
+        ]);
+    }
 }

@@ -19,6 +19,10 @@
     list-style: none;
 }
 
+.hide{
+    display: none;
+}
+
 html{
     font-size: 62.5%;
     overflow-x: hidden;
@@ -1297,6 +1301,99 @@ footer .credit span{
 .addresses .items .item .footer a:last-child{
     float: right;
 }
+
+.checkout{
+    padding-top: 10rem;
+    background-color: #eee;
+}
+
+.checkout .title{
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.checkout .frete{
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+.checkout .frete label{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.checkout .frete #frete-input{
+    border: 0.1rem solid rgba(0,0,0,0.1);
+    padding: 1rem 1.5rem;
+}
+
+.checkout .frete .btn{
+    margin-left: .5rem;
+}
+
+.checkout .user-address{
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 1rem;
+    box-shadow: var(--box-shadow);
+}
+
+.checkout .address-info{
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.checkout .address-info b{
+    color: rgb(0, 0, 0, .8)
+}
+
+.checkout .address-info span{
+    color: #555555;
+}
+
+.checkout select{
+    border-radius: 5px;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    border: .1rem solid rgba(0,0,0,.1);
+}
+
+.checkout .order-items{
+    margin-top: 2rem;
+}
+
+.checkout .item{
+    align-items: center;
+    display: flex;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+    background-color: #fff;
+    flex-wrap: wrap;
+}
+
+.checkout .item span{
+    margin-left: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.checkout .item .img-box{
+    width: 50px;
+    height: 50px;
+}
+
+.checkout .item img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.checkout .item .product-name{
+    font-weight: 500;
+    margin-left: .5rem;
+}
+
 
 /*-----media queries-----*/
 @media (max-width: 991px){

@@ -6,6 +6,7 @@ use Source\Models\Produto;
 use Source\Models\Pedido;
 use Source\Models\PedidoProduto;
 use Source\Models\Usuario;
+use Source\Models\Endereco;
 
 class WebCart extends Controller{
     private $cart;
@@ -48,18 +49,23 @@ class WebCart extends Controller{
         echo json_encode($this->cart->cart());
     }
 
-    public function registerOrder(){
+    public function registerOrder($data){
         if(empty($_SESSION["user"])){
             $this->router->redirect("web.login");
-            return;
         }
 
         $usuario = (new Usuario())->findByid(intval($_SESSION["user"]));
+        $endereco = (new Endereco)->findById(intval($data["address"]));
+
+        if(!filter_var($data["address"], FILTER_VALIDATE_INT) || !$endereco || $endereco->user()->idUsuario != $usuario->idUsuario){
+            $this->router->redirect("app.checkout");
+        }
+
         $carrinho = $this->cart->cart();
 
         if(!empty($carrinho) || !empty($carrinho["items"])){
             $pedido = new Pedido();
-            $pedido->add($usuario, $carrinho["total"]);
+            $pedido->add($usuario, $endereco, $carrinho["total"]);
             $pedido->save();
             
             foreach ($carrinho["items"] as $item) {

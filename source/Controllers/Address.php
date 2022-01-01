@@ -15,6 +15,21 @@ class Address extends Controller{
         }
     }
 
+    public function getAddress($data){
+        $address = (new Endereco)->findById(intval($data["id"]));
+        
+        echo json_encode([
+            "idEndereco" => $address->idEndereco,
+            "nome" => $address->nome,
+            "estado" => $address->estado,
+            "cidade" => $address->cidade,
+            "bairro" => $address->bairro,
+            "rua" => $address->rua,
+            "numeroCasa" => $address->numeroCasa,
+            "cep" => $address->cep
+        ]);
+    }
+
     public function listAddresses(){
         $addresses = $this->user->allAddresses();
         echo $this->view->render("theme/app/listAddress", [

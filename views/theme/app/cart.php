@@ -58,7 +58,7 @@
                 <span><?= $total?></span>
                 <p>à vista</p>
             </div>
-            <a href="<?= $router->route("cart.registerOrder")?>">FINALIZAR</a>
+            <a href="<?= $router->route("app.checkout")?>">FINALIZAR</a>
         </div>
     </div>
 </section>
