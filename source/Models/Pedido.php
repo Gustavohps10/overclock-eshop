@@ -8,9 +8,9 @@ class Pedido extends DataLayer{
         parent::__construct("pedido", [], "idPedido", false);
     }
 
-    public function add(Usuario $usuario, $valor){
+    public function add(Usuario $usuario, Endereco $endereco, $valor){
         $this->fk_idUsuario = $usuario->idUsuario;
-        $this->fk_idEndereco = 1; //----------------
+        $this->fk_idEndereco = $endereco->idEndereco;
         $this->statusPedido = "EM ANDAMENTO";
         $this->valor = $valor;
         $this->dataPedido = (new \DateTime('now', new \DateTimeZone('America/Sao_Paulo')))->format('Y-m-d H:i:s');
@@ -23,6 +23,10 @@ class Pedido extends DataLayer{
 
     public function user(){
         return (new Usuario())->findById($this->fk_idUsuario);
+    }
+
+    public function address(){
+        return (new Endereco())->findById($this->fk_idEndereco);
     }
 
 }

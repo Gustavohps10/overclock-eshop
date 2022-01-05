@@ -147,6 +147,7 @@ class App extends Controller{
         
         $itensPedido = $pedido->items();
         $cliente = $pedido->user();
+        $endereco = $pedido->address();
 
         $pedido->dataPedido = date("d/m/Y H:i:s", strtotime($pedido->dataPedido));
         
@@ -154,7 +155,29 @@ class App extends Controller{
             "title" => "Meus Pedidos : #".$data["id"]." ". site("name"),
             "pedido" => $pedido,
             "itensPedido" => $itensPedido,
-            "cliente" => $cliente
+            "cliente" => $cliente,
+            "endereco" => $endereco
+        ]);
+    }
+
+    public function checkout(){
+        if(empty($_SESSION["user"])){
+            $this->router->redirect("web.login");
+        }
+
+        $cart = (new Cart())->cart();
+        
+        if (empty($cart["items"])) {
+            $this->router->redirect("app.order");
+        }
+        
+        $items = json_encode($cart["items"], true);
+        $addresses = $this->user->allAddresses();
+
+        echo $this->view->render("theme/app/checkout", [
+            "title" => "Checkout | ". site("name"),
+            "produtosCarrinho" => json_decode($items),
+            "enderecos" => $addresses
         ]);
     }
 }

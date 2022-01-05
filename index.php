@@ -19,6 +19,7 @@ $router->get("/sair", "App:logoff", "app.logoff");
 $router->get("/busca", "App:search", "app.search");
 $router->get("/produto/{id}", "App:productDetail", "app.productDetail");
 $router->get("/carrinho", "App:order", "app.order");
+$router->get("/checkout", "App:checkout", "app.checkout");
 $router->get("/MeusPedidos", "App:listOrders", "app.listOrders");
 $router->get("/MeusPedidos/{id}", "App:detailOrder", "app.detailOrder");
 
@@ -29,6 +30,7 @@ $router->group("/enderecos");
 $router->get("/", "Address:listAddresses", "address.listAddresses");
 $router->get("/cadastrar", "Address:register", "address.register");
 $router->get("/editar/{id}", "Address:edit", "address.edit");
+$router->post("/getAddress/{id}", "Address:getAddress", "address.getAddress");
 
 /**
  * Web Address
@@ -46,7 +48,7 @@ $router->post("/", "WebCart:cart", "cart.cart");
 $router->post("/add/{id}", "WebCart:add", "cart.add");
 $router->post("/remove/{id}", "WebCart:remove", "cart.remove");
 $router->post("/clear", "WebCart:clear", "cart.clear");
-$router->get("/registerOrder", "WebCart:registerOrder", "cart.registerOrder");
+$router->post("/registerOrder", "WebCart:registerOrder", "cart.registerOrder");
 
 /*
  *Web

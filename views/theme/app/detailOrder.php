@@ -1,6 +1,6 @@
 <?php $v->layout("theme/app/_base");?>
 
-<section class="detailOrder">
+<section class="detail-order">
     <h1 class="title"><i class="fas fa-clipboard-list"></i> Meu Pedido</h1>
     <div class="details">
         <i class="fas fa-shopping-cart"></i>
@@ -26,25 +26,19 @@
                 </div>
             </div>
         </div>
-        <div class="total">
-            <h1>TOTAL</h1>
+        <div class="client-address">
+            <h1>Endereço</h1>
             <div class="content">
-                <div class="subtotal">
-                    <span>Subtotal</span>
-                    <p>R$ 00,00</p>
-                </div>
-                <div class="frete">
-                    <span>Frete</span>
-                    <p>R$ 00,00</p>
-                </div>
-                <div class="cupom">
-                <span>Cupom de Desconto</span>
-                    <p>R$ 00,00</p>
-                </div>
-                <div class="value">
-                    <span>Total</span>
-                    <p><?= 'R$ '.number_format($pedido->valor, 2, ',', '.')?></p>
-                </div>
+                <b>Nome: </b><span><?= $endereco->nome?></span>
+                <br>
+                <b>Estado: </b><span><?= $endereco->estado?></span>
+                <br>
+                <b>Cidade: </b><span><?= $endereco->cidade?></span>
+                <br>
+                <b>Bairro: </b><span><?= $endereco->bairro?></span>
+                <br>
+                <b>Rua: </b><span><?= $endereco->rua?>,</span>
+                <span><?= $endereco->numeroCasa?></span>
             </div>
         </div>
     </div>
@@ -76,4 +70,25 @@
         </div>
         
     </div>
+    <div class="total">
+            <h1>TOTAL</h1>
+            <div class="content">
+                <div class="subtotal">
+                    <span>Subtotal</span>
+                    <p>R$ 00,00</p>
+                </div>
+                <div class="frete">
+                    <span>Frete</span>
+                    <p>R$ 00,00</p>
+                </div>
+                <div class="cupom">
+                <span>Cupom de Desconto</span>
+                    <p>R$ 00,00</p>
+                </div>
+                <div class="value">
+                    <span>Total</span>
+                    <p><?= 'R$ '.number_format($pedido->valor, 2, ',', '.')?></p>
+                </div>
+            </div>
+        </div>
 </section>
