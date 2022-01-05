@@ -147,6 +147,7 @@ class App extends Controller{
         
         $itensPedido = $pedido->items();
         $cliente = $pedido->user();
+        $endereco = $pedido->address();
 
         $pedido->dataPedido = date("d/m/Y H:i:s", strtotime($pedido->dataPedido));
         
@@ -154,7 +155,8 @@ class App extends Controller{
             "title" => "Meus Pedidos : #".$data["id"]." ". site("name"),
             "pedido" => $pedido,
             "itensPedido" => $itensPedido,
-            "cliente" => $cliente
+            "cliente" => $cliente,
+            "endereco" => $endereco
         ]);
     }
 

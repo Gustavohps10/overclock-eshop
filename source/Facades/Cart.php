@@ -4,12 +4,12 @@ namespace Source\Facades;
 use Source\Models\Produto;
 
 class Cart{
-    public function __constructor(){
+    public function __construct(){
         if(!session_id()){
             session_start();
         }
 
-        $_SESSION["cart"] = (!empty($_SESSION["cart"]) ? $_SESSION["cart"] : []);
+        $_SESSION["cart"]  = ($_SESSION["cart"]  ?? []);
     }
 
     public function cart(){

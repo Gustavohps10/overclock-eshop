@@ -1011,17 +1011,17 @@ footer .credit span{
     color: #fff;
 }
 
-.detailOrder{
+.detail-order{
     padding-top: 10rem;
     background-color: #eee;
 }
 
-.detailOrder .title{
+.detail-order .title{
     text-align: center;
     font-size: 2.5rem;
 }
 
-.detailOrder .details{
+.detail-order .details{
     background-color: #fff;
     box-shadow: var(--box-shadow);
     padding: 1.5rem;
@@ -1033,93 +1033,104 @@ footer .credit span{
     align-items: center;
 }
 
-.detailOrder .details .order-number p{
+.detail-order .details .order-number p{
     color: var(--blue);
 }
 
-.detailOrder i{
+.detail-order i{
     color: var(--blue);
     font-size: 2.5rem;
 }
 
-.detailOrder .details div > span{
+.detail-order .details div > span{
     font-size: 1.5rem;
     color: #777;
 }
 
-.detailOrder .details div > p{
+.detail-order .details div > p{
     font-size: 1.5rem;
 }
 
-.detailOrder .container{
+.detail-order .container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 2rem;
+    margin: 1rem 0;
 }
 
-.detailOrder .client .content, .detailOrder .total .content{
+.detail-order .client .content, .detail-order .total .content{
     height: 15rem;
 }
 
-.detailOrder .client .content, .detailOrder .total .content, .detailOrder .items .content{
+.detail-order .client .content, .detail-order .total .content, .detail-order .items .content{
     background-color: #fff;
     box-shadow: var(--box-shadow);
     padding: 1.5rem;
     border-radius: 5px;
 }
 
-.detailOrder .client .content{
+.detail-order .client .content{
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    height: 150px;
 }
 
-.detailOrder .client .data h1{
+.detail-order .client .data h1{
     font-weight: 600;
     text-transform: uppercase;
 }
 
-
-.detailOrder .client .data p{
+.detail-order .client .data p{
     font-size: 1.5rem;
 }
 
-.detailOrder .total .content div > p{
+.detail-order .client-address .content{
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+    padding: 1rem;
+    font-size: 1.5rem;
+    line-height: 2.3rem;
+    height: 150px;
+}
+
+.detail-order .total .content div > p{
     float: right;
 }
 
-.detailOrder .total .content div{
+.detail-order .total .content div{
     font-size: 1.4rem;
     margin: .3rem 0;
 }
 
-.detailOrder .total .value{
+.detail-order .total .value{
     margin-top: 3rem !important;
     font-size: 1.6rem !important;
     font-weight: 700;
 }
 
-.detailOrder .total .value span{
+.detail-order .total .value span{
     color: var(--blue);
 }
 
-.detailOrder .items{
-    margin-top: 1.5rem;
+.detail-order .items{
+    margin: 1rem 0;
 }
 
-.detailOrder .items .item{
+.detail-order .items .item{
     border-bottom: .1rem solid rgba(0,0,0,0.1);
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 1rem;
 }
 
-.detailOrder .items .item, .detailOrder .items .item > div{
+.detail-order .items .item, .detail-order .items .item > div{
     display: flex;
     align-items: center;
 }
 
-.detailOrder .items .item .img-box{
+.detail-order .items .item .img-box{
     width: 5rem;
     height: 5rem;
     display: flex;
@@ -1127,31 +1138,31 @@ footer .credit span{
     justify-content: center;
 }
 
-.detailOrder .items .item .name{
+.detail-order .items .item .name{
     width: 16rem;
     margin-left: 1rem;
     font-weight: 600;
 }
 
-.detailOrder .items .item .img-box img{
+.detail-order .items .item .img-box img{
     max-width: 100%;
     max-height: 100%;
 }
 
-.detailOrder .items .item .purchase-info{
+.detail-order .items .item .purchase-info{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(15rem, 20rem));
     gap: 2rem;
     width: 70%;
 }
 
-.detailOrder .items .item .purchase-info div > span{
+.detail-order .items .item .purchase-info div > span{
     font-size: 1.5rem;
     color: #777;
     font-weight: 600;
 }
 
-.detailOrder .items .item .purchase-info div > p{
+.detail-order .items .item .purchase-info div > p{
     font-size: 1.5rem;
     font-weight: 600;
 }

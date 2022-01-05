@@ -25,4 +25,8 @@ class Pedido extends DataLayer{
         return (new Usuario())->findById($this->fk_idUsuario);
     }
 
+    public function address(){
+        return (new Endereco())->findById($this->fk_idEndereco);
+    }
+
 }
