@@ -18,13 +18,13 @@
 * [Technologies](#hammer_and_wrench-technologies)
 * [Author](#adult-author)
 
-# 📃 Description
+# :page_with_curl: Description
 <p>
 The Overclock E-shop is a web system focused on the sale of computer electronics.
 It was developed thinking about having the main functionalities of an e-commerce. In this project, the user has a flow similar to that of a real virtual store, being able to search for products, add to the cart, control the cart and even complete the order by choosing the address.
 </p>
 
-# 🎲 Features
+# :game_die: Features
 - [x] Admin Dashboard
 - [x] Login
 - [x] User registration
@@ -35,11 +35,11 @@ It was developed thinking about having the main functionalities of an e-commerce
 - [x] Chekout
 - [x] Place order
 - [x] View order details
-- [] Discount coupon
-- [] Shipping price
-- [] Payment methods
+- [ ] Discount coupon
+- [ ] Shipping price
+- [ ] Payment methods
 
-# ⚙️ How to run the application
+# :gear: How to run the application
 
 ## You can use our test site
 > ⚠️ Not yet implemented
@@ -51,7 +51,7 @@ It was developed thinking about having the main functionalities of an e-commerce
 4. Download [database](#) and import in [phpMyAdmin](http://localhost/phpmyadmin/index.php?route=/server/import)
 5. Open in your browser <http://localhost/overclock-eshop-master>
 
-# 🛠️ Technologies
+# :hammer_and_wrench: Technologies
 Tools used in the project:
 - PHP 7
 - MySQL
@@ -59,5 +59,5 @@ Tools used in the project:
 - CSS3
 - JavaScript
 
-# 🧑 Author
+# :adult: Author
 Made with 💜 Gustavo Henrique
