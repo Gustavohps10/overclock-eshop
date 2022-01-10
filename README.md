@@ -1,4 +1,4 @@
-<h1 style="text-align: center;">
+<h1 align="center">
     <img src="views/assets/images/logo.png" />
     <br>
     Simple E-Commerce: <i>Overclock E-Shop</i>
@@ -9,7 +9,9 @@
 
 > Status: **Developing** ⚠️
 
-<img style="position:relative; left: 50%; transform: translateX(-50%);" src="views/assets/images/to-readme/buying.gif" />
+<div align="center">
+<img src="views/assets/images/to-readme/buying.gif" />
+</div>
 
 ## Summary:
 * [Description](#page_with_curl-description)
@@ -42,14 +44,35 @@ It was developed thinking about having the main functionalities of an e-commerce
 # :gear: How to run the application
 
 ## You can use our test site
-> ⚠️ Not yet implemented
+> ❌ Not yet implemented
 
 ## or run the application on your machine
 1. Install and Open [XAMPP](https://www.apachefriends.org/xampp-files/7.4.27/xampp-windows-x64-7.4.27-1-VC15-installer.exe)
-2. Download and extract the [project](https://github.com/Gustavohps10/overclock-eshop/archive/refs/heads/master.zip) to the folder C:\xampp\htdocs
-3. Start Apache and MySQL
-4. Download [database](#) and import in [phpMyAdmin](http://localhost/phpmyadmin/index.php?route=/server/import)
-5. Open in your browser <http://localhost/overclock-eshop-master>
+2. Download and extract the [project](https://github.com/Gustavohps10/overclock-eshop/archive/refs/heads/master.zip)
+3. Rename the extracted folder to "sistema-venda" and paste in the path C:\xampp\htdocs\git-hub\
+4. Start Apache and MySQL in XAMPP
+5. In the project go to source/Database and import the "overclockeshop-database" file in [phpMyAdmin](http://localhost/phpmyadmin/index.php?route=/server/import)
+6. Open in your browser <http://localhost/git-hub/sistema-venda>
+
+### ⚠️ Important
+> The final path should be C:\xampp\htdocs\git-hub\sistema-venda.
+
+If you want to change the project path, you need to modify the url in the code too, just follow the steps below
+
+1. In the project go to the "source" folder and open the "Config.php" file
+2. Now just change the "root" to the path you want
+
+Example:
+```bash
+define("SITE", [
+    "name" => "OVERCLOCK E-SHOP",
+    "desc" => "lorem ipsum",
+    "domain" => "",
+    "locale" => "pt_BR",
+    "root" => "http://localhost/example/new-path" //Modify Here
+]);
+```
+
 
 # :hammer_and_wrench: Technologies
 Tools used in the project:
