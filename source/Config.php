@@ -1,7 +1,7 @@
 <?php
 
 define("SITE", [
-    "name" => "GHPS",
+    "name" => "OVERCLOCK E-SHOP",
     "desc" => "lorem ipsum",
     "domain" => "",
     "locale" => "pt_BR",
@@ -16,7 +16,7 @@ define("DATA_LAYER_CONFIG", [
     "driver" => "mysql",
     "host" => "localhost",
     "port" => "3306",
-    "dbname" => "lanchonete",
+    "dbname" => "overclock",
     "username" => "root",
     "passwd" => "",
     "options" => [
