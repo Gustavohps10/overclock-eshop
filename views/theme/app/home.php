@@ -40,7 +40,7 @@
 
         <div class="box-container">
             <?php
-            foreach($novosProdutos as $produto):
+            if(!empty($novosProdutos)): foreach($novosProdutos as $produto):
                 $valorProduto = 'R$'.number_format($produto->valor, 2, ',', '.');
             ?>
             <div class="box">
@@ -60,7 +60,7 @@
                 <a href="" data-action="<?= $router->route("cart.add", ["id" => $produto->idProduto])?>" class="btn">Comprar <i class="fas fa-shopping-cart"></i></a>
             </div>
             <?php
-            endforeach;
+            endforeach; endif;
             ?>
         </div>
     </section>
