@@ -13,13 +13,6 @@
 <img src="views/assets/images/to-readme/buying.gif" />
 </div>
 
-## Summary:
-* [Description](#page_with_curl-description)
-* [Features](#game_die-features)
-* [How to run](#gear-how-to-run-the-application)
-* [Technologies](#hammer_and_wrench-technologies)
-* [Author](#adult-author)
-
 # :page_with_curl: Description
 <p>
 The Overclock E-shop is a web system focused on the sale of computer electronics.
