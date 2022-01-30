@@ -1459,6 +1459,19 @@ footer .credit span{
     .home .home-slider .slide .content h3{
         font-size: 5rem;
     }
+
+    .cart .items{
+        width: 100%;
+    }
+
+    .cart .pay{
+        width: 100%;
+    }
+
+    .cart .item .value{
+        margin-right: 0;
+        width: 14rem
+    }
 }
 
 @media (max-width: 991px){
