@@ -673,15 +673,13 @@ footer .credit span{
 
 .product-detail .product-image{
     width: 55%;
-    height: 50rem;
     padding: 2rem;
     display: flex;
     justify-content: center;
 }
 
 .product-detail .product-image img{
-    max-height: 100%;
-    max-width: 100%;
+    width: 80%;
 }
 
 .product-detail .product-info{
@@ -1488,8 +1486,6 @@ footer .credit span{
         height: 30rem;
     }
 
-    
-
     .cart .items{
         width: 100%;
     }
@@ -1501,6 +1497,11 @@ footer .credit span{
     .cart .item .value{
         margin-right: 0;
         width: 14rem
+    }
+
+    .product-detail .product-info, .product-detail .product-image{
+        width: 100%;
+        border: none;
     }
 }
 
