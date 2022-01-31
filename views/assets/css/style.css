@@ -28,6 +28,7 @@ html{
     overflow-x: hidden;
     scroll-padding-top: 5.5rem;
     scroll-behavior: smooth;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 section, footer{
@@ -1449,6 +1450,18 @@ footer .credit span{
         margin: 1rem;
         font-size: 2rem;
         background: #eee;
+    }
+
+    header .logo{
+        display: none;
+    }
+
+    header .icons{
+        width: 100%;
+    }
+
+    header .icons .wrapper{
+        float: right;
     }
 
     #search-form #search-box{
