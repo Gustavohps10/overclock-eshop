@@ -24,31 +24,33 @@
 
         <div class="icons">
             <i class="item fas fa-bars" id="menu-bars"></i>
-            <i class="item fas fa-search" id="search-icon"></i>
-            <a href="<?= $router->route("app.order")?>" class="item fas fa-shopping-cart"></a>
-            <i href="#" class="item fas fa-user"></i>
-            <nav class="nav-user">
-                <i class="fas fa-caret-up arrow"></i>
-                <ul>
-                    <?php 
-                        if(empty($_SESSION["user"])):
-                    ?>
-                    <li><a href="<?= $router->route('web.login')?>"><i class="fas fa-sign-in-alt"></i>Login / Registrar</a></li>
-                    <li><a href="#"><i class="fas fa-heart"></i>Meus Favoritos</a></li>
-                    <li><a href="#"><i class="fas fa-question-circle"></i>Suporte</a></li>
-                    <?php 
-                        else:
-                    ?>
-                    <li><a href="<?= $router->route("app.account")?>"><i class="far fa-user-circle"></i>Minha Conta</a></li>
-                    <li><a href="<?= $router->route("app.listOrders")?>"><i class="fas fa-clipboard-list"></i>Meus Pedidos</a></li>
-                    <li><a href="#"><i class="fas fa-heart"></i>Meus Favoritos</a></li>
-                    <li><a href="#"><i class="fas fa-question-circle"></i>Suporte</a></li>  
-                    <li><a href="<?= $router->route("app.logoff")?>"><i class="fas fa-door-open"></i>Sair</a></li>
-                    <?php 
-                        endif;
-                    ?>
-                </ul>
-            </nav>
+            <div class="wrapper">
+                <i class="item fas fa-search" id="search-icon"></i>
+                <a href="<?= $router->route("app.order")?>" class="item fas fa-shopping-cart"></a>
+                <i href="#" class="item fas fa-user"></i>
+                <nav class="nav-user">
+                    <i class="fas fa-caret-up arrow"></i>
+                    <ul>
+                        <?php 
+                            if(empty($_SESSION["user"])):
+                        ?>
+                        <li><a href="<?= $router->route('web.login')?>"><i class="fas fa-sign-in-alt"></i>Login / Registrar</a></li>
+                        <li><a href="#"><i class="fas fa-heart"></i>Meus Favoritos</a></li>
+                        <li><a href="#"><i class="fas fa-question-circle"></i>Suporte</a></li>
+                        <?php 
+                            else:
+                        ?>
+                        <li><a href="<?= $router->route("app.account")?>"><i class="far fa-user-circle"></i>Minha Conta</a></li>
+                        <li><a href="<?= $router->route("app.listOrders")?>"><i class="fas fa-clipboard-list"></i>Meus Pedidos</a></li>
+                        <li><a href="#"><i class="fas fa-heart"></i>Meus Favoritos</a></li>
+                        <li><a href="#"><i class="fas fa-question-circle"></i>Suporte</a></li>  
+                        <li><a href="<?= $router->route("app.logoff")?>"><i class="fas fa-door-open"></i>Sair</a></li>
+                        <?php 
+                            endif;
+                        ?>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
 
