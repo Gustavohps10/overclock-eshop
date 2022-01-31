@@ -6,7 +6,7 @@
 
 <section class="login">
     <div id=right-ball></div>
-    <img src="<?= asset("/images/enter.svg")?>" alt="">
+    <img class="loginImg" src="<?= asset("/images/login.svg")?>" alt="">
     <form action="<?= $router->route("auth.login");?>" method="post" autocomplete = "off">
         <h1>Sign In</h1>
         <div class="input-field">
