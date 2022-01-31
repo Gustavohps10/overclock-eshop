@@ -163,3 +163,19 @@ form input[type="checkbox"]:checked::before{
 #state{
     text-transform: uppercase;
 }
+
+@media(max-width: 991px){
+    .register{
+        padding: 8rem 2rem;
+    }
+}
+
+@media(max-width: 768px){
+    .register form .double-input-field .input-box{
+        width: 100%;
+    }
+
+    .register form .form-footer .item{
+        width: 100%;
+    }
+}

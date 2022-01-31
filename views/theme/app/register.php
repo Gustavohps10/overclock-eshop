@@ -51,13 +51,13 @@
             </div>
         </div>
         <div class="form-footer">
-           <div class="captcha">
-               teste
+           <div class="captcha item">
+               CAPTCHA HERE
            </div>
-           <div>
+           <div class="item">
                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore, tempora deserunt sequi velit ex enim praesentium voluptatibus aliquam fugiat provident?</p>
            </div>
-            <input class="btn" type="submit" value="Cadastrar">
+            <input class="btn item" type="submit" value="Cadastrar">
         </div>
     </form>
 </section>
