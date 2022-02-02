@@ -70,8 +70,6 @@ class WebCart extends Controller{
         if(empty($carrinho) || empty($carrinho["items"])){
             $this->router->redirect("app.order");
         }
-
-        $data["service"] = 1;
         
         $metodoPagamento = (new MetodoPagamento)->findById($data["service"]);
         $pedido = new Pedido();
@@ -90,8 +88,8 @@ class WebCart extends Controller{
             $produto->save();
         }
        
-        $service = $data["service"];
-        switch ($service) {        
+        $serviceId = $data["service"];
+        switch ($serviceId) {        
             default:
                 $service = new PicPay();
                 break;

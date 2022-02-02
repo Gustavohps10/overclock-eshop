@@ -5,6 +5,7 @@ use Source\Models\Usuario;
 use Source\Models\Produto;
 use Source\Facades\Cart;
 use Source\Models\Pedido;
+use Source\Models\MetodoPagamento;
 
 class App extends Controller{
     protected $user;
@@ -173,11 +174,13 @@ class App extends Controller{
         
         $items = json_encode($cart["items"], true);
         $addresses = $this->user->allAddresses();
+        $metodosPagamento = (new MetodoPagamento)->find()->fetch(true);
 
         echo $this->view->render("theme/app/checkout", [
             "title" => "Checkout | ". site("name"),
             "produtosCarrinho" => json_decode($items),
-            "enderecos" => $addresses
+            "enderecos" => $addresses,
+            "metodosPagamento" => $metodosPagamento
         ]);
     }
 }
