@@ -13,6 +13,15 @@
             <p><?= $pedido->dataPedido?></p>
         </div>
     </div>
+
+    <div class="payment">
+        <h1>Informaçõoes de Pagamento</h1>
+        <div class="content">
+            <img id="qrcode" src="<?= $pedido->qrcode?>" alt="qrcode">
+            <p>STATUS: <?= $pedido->statusPedido?></p>
+        </div>
+    </div>
+
     <div class="container">
         <div class="client">
             <h1>DADOS DO CLIENTE</h1>
@@ -42,6 +51,7 @@
             </div>
         </div>
     </div>
+
     <div class="items">
         <h1>ITENS DO PEDIDO</h1>
         <div class="content">
@@ -70,6 +80,7 @@
         </div>
         
     </div>
+
     <div class="total">
             <h1>TOTAL</h1>
             <div class="content">

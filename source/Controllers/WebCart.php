@@ -7,6 +7,10 @@ use Source\Models\Pedido;
 use Source\Models\PedidoProduto;
 use Source\Models\Usuario;
 use Source\Models\Endereco;
+use Source\Models\MetodoPagamento;
+
+use Source\Services\Payment;
+use Source\Services\PaymentPlatform\PicPay;
 
 class WebCart extends Controller{
     private $cart;
@@ -63,25 +67,43 @@ class WebCart extends Controller{
 
         $carrinho = $this->cart->cart();
 
-        if(!empty($carrinho) || !empty($carrinho["items"])){
-            $pedido = new Pedido();
-            $pedido->add($usuario, $endereco, $carrinho["total"]);
-            $pedido->save();
-            
-            foreach ($carrinho["items"] as $item) {
-                $produto = (new Produto())->findById(intval($item["id"]));
-
-                $itemPedido = new PedidoProduto();
-                $itemPedido->add($pedido, $produto, $item["amount"], $item["subtotal"]);
-                $itemPedido->save();
-
-                $produto->quantidade -= $item["amount"];
-                $produto->save();
-            }
-            $this->cart->clear();
-            $this->router->redirect("app.listOrders");
-        }else{
+        if(empty($carrinho) || empty($carrinho["items"])){
             $this->router->redirect("app.order");
         }
+
+        $data["service"] = 1;
+        
+        $metodoPagamento = (new MetodoPagamento)->findById($data["service"]);
+        $pedido = new Pedido();
+        $pedido->add($usuario, $endereco, $carrinho["total"], $metodoPagamento);
+        $pedido->save();
+        $pedido->generateReferenceCode();
+        
+        foreach ($carrinho["items"] as $item) {
+            $produto = (new Produto())->findById(intval($item["id"]));
+
+            $itemPedido = new PedidoProduto();
+            $itemPedido->add($pedido, $produto, $item["amount"], $item["subtotal"]);
+            $itemPedido->save();
+
+            $produto->quantidade -= $item["amount"];
+            $produto->save();
+        }
+       
+        $service = $data["service"];
+        switch ($service) {        
+            default:
+                $service = new PicPay();
+                break;
+        }
+
+        $payment = new Payment($service);
+        $paymentData = $payment->generatePaymentIntent($pedido->referencia, $carrinho["total"]);
+        $pedido->qrcode = $paymentData->qrcode->base64;
+        $pedido->linkPagamento = $paymentData->paymentUrl;
+        $pedido->save();
+
+        $this->cart->clear();
+        $this->router->redirect("app.listOrders");
     }
 }
