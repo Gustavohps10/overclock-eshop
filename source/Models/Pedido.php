@@ -8,9 +8,10 @@ class Pedido extends DataLayer{
         parent::__construct("pedido", [], "idPedido", false);
     }
 
-    public function add(Usuario $usuario, Endereco $endereco, $valor){
+    public function add(Usuario $usuario, Endereco $endereco, $valor, $metodoPagamento){
         $this->fk_idUsuario = $usuario->idUsuario;
         $this->fk_idEndereco = $endereco->idEndereco;
+        $this->fk_idMetodoPagamento = $metodoPagamento->idMetodoPagamento;
         $this->statusPedido = "EM ANDAMENTO";
         $this->valor = $valor;
         $this->dataPedido = (new \DateTime('now', new \DateTimeZone('America/Sao_Paulo')))->format('Y-m-d H:i:s');
@@ -27,6 +28,12 @@ class Pedido extends DataLayer{
 
     public function address(){
         return (new Endereco())->findById($this->fk_idEndereco);
+    }
+
+    public function generateReferenceCode(){
+        $referenceId = $this->idPedido . (new \DateTime('now', new \DateTimeZone('America/Sao_Paulo')))->getTimestamp();
+        $this->referencia = $referenceId;
+        $this->save();
     }
 
 }

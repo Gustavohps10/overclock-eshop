@@ -9,6 +9,15 @@ primary key(idPerfil)
 
 insert into perfil(nome) values ('CLIENTE'), ('SUPORTE'),('ADMINISTRADOR');
 
+create table metodoPagamento(
+idMetodoPagamento int not null auto_increment,
+nome varchar(50),
+imagem varchar(255),
+primary key(idMetodoPagamento)
+);
+
+insert into metodoPagamento(nome) value ('PICPAY');
+
 create table usuario(
 idUsuario int not null auto_increment,
 nome varchar(150),
@@ -51,14 +60,20 @@ primary key (idProduto)
 
 create table pedido(
 idPedido int not null auto_increment,
+referencia varchar(255),
 valor decimal(8,2),
 statusPedido varchar(15),
 dataPedido datetime,
+dataPagamento datetime,
+linkPagamento varchar(255),
+qrcode longtext,
 fk_idUsuario int not null,
 fk_idEndereco int not null,
+fk_idMetodoPagamento int not null,
 primary key (idPedido),
 foreign key (fk_idUsuario) references usuario(idUsuario),
-foreign key (fk_idEndereco) references endereco(idEndereco)
+foreign key (fk_idEndereco) references endereco(idEndereco),
+foreign key (fk_idMetodoPagamento) references metodoPagamento(idMetodoPagamento)
 );
 
 create table pedido_produto(
