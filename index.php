@@ -20,8 +20,8 @@ $router->get("/busca", "App:search", "app.search");
 $router->get("/produto/{id}", "App:productDetail", "app.productDetail");
 $router->get("/carrinho", "App:order", "app.order");
 $router->get("/checkout", "App:checkout", "app.checkout");
-$router->get("/MeusPedidos", "App:listOrders", "app.listOrders");
-$router->get("/MeusPedidos/{id}", "App:detailOrder", "app.detailOrder");
+$router->get("/pedidos", "App:listOrders", "app.listOrders");
+$router->get("/pedidos/{id}", "App:detailOrder", "app.detailOrder");
 
 /**
  * Address

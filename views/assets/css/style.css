@@ -1034,7 +1034,7 @@ footer .credit span{
     align-items: center;
 }
 
-.detail-order .details .order-number p{
+.detail-order .details .order-number p, .detail-order .details .ref p{
     color: var(--blue);
 }
 
@@ -1050,6 +1050,33 @@ footer .credit span{
 
 .detail-order .details div > p{
     font-size: 1.5rem;
+}
+
+.detail-order .payment .content{
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    padding: 1rem;
+    border-radius: 5px;
+    display: flex;
+}
+
+.detail-order .payment .content #qrcodeImg{
+    width: 23rem;
+    height: 23rem;
+}
+
+.detail-order .payment .content .info{
+    padding: 1.5rem;
+}
+
+.detail-order .payment .content .info p{
+    font-size: 1.6rem;
+    margin: .8rem 0;
+}
+
+.detail-order .payment .content .info #methodImg{
+    max-width: 8rem;
+    display: block;
 }
 
 .detail-order .container{

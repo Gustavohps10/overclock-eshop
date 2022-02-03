@@ -30,6 +30,10 @@ class Pedido extends DataLayer{
         return (new Endereco())->findById($this->fk_idEndereco);
     }
 
+    public function paymentMethod(){
+        return (new MetodoPagamento())->findById($this->fk_idMetodoPagamento);
+    }
+
     public function generateReferenceCode(){
         $referenceId = $this->idPedido . (new \DateTime('now', new \DateTimeZone('America/Sao_Paulo')))->getTimestamp();
         $this->referencia = $referenceId;

@@ -8,6 +8,10 @@
             <span>N° do pedido</span>
             <p>#<?= $pedido->idPedido?></p>
         </div>
+        <div class="ref">
+            <span>ID de Referência:</span>
+            <p>#<?= $pedido->referencia?></p>
+        </div>
         <div class="date">
             <span>Data e Hora</span>
             <p><?= $pedido->dataPedido?></p>
@@ -15,10 +19,15 @@
     </div>
 
     <div class="payment">
-        <h1>Informaçõoes de Pagamento</h1>
+        <h1>INFORMAÇÕES DE PAGAMENTO</h1>
         <div class="content">
-            <img id="qrcode" src="<?= $pedido->qrcode?>" alt="qrcode">
-            <p>STATUS: <?= $pedido->statusPedido?></p>
+            <img id="qrcodeImg" src="<?= $pedido->qrcode?>" alt="qrcode">
+            <div class="info">
+                <p>Forma de pagamento escolhida: <b><?=$pedido->paymentMethod()->nome ?></b></p>
+                <p>Situação: <b><?= $pedido->statusPedido?></b></p>
+                <img id="methodImg" src="<?= asset("images/payment/".$pedido->paymentMethod()->imagem)?>">
+                <a target="_blank" href="<?= $pedido->linkPagamento ?>" class="btn">PAGAR</a>
+            </div>
         </div>
     </div>
 
@@ -36,7 +45,7 @@
             </div>
         </div>
         <div class="client-address">
-            <h1>Endereço</h1>
+            <h1>ENDEREÇO</h1>
             <div class="content">
                 <b>Nome: </b><span><?= $endereco->nome?></span>
                 <br>
