@@ -27,6 +27,16 @@ define("DATA_LAYER_CONFIG", [
     ]
 ]);
 
+define("TRANSLATION_STATUS_PAY", [
+    "created" => "Pendente",
+    "expired"  => "Prazo de pagamento expirado",
+    "analysis"  => "Analisando anti-fraude",
+    "paid" => "Pago",
+    "completed" => "Pago",
+    "refunded" => "Devolvido",
+    "chargeback" => "Pago"
+]);
+
 /**
  * SITE MINIFY
  */
@@ -34,11 +44,3 @@ define("DATA_LAYER_CONFIG", [
 if($_SERVER["SERVER_NAME"] == "localhost"){
     require __DIR__."/Minify.php";
 }
-
-/**
- * MAIL CONNECT
- */
-
-define("MAIL", [
-    
-]);

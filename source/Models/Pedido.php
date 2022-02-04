@@ -12,7 +12,7 @@ class Pedido extends DataLayer{
         $this->fk_idUsuario = $usuario->idUsuario;
         $this->fk_idEndereco = $endereco->idEndereco;
         $this->fk_idMetodoPagamento = $metodoPagamento->idMetodoPagamento;
-        $this->statusPedido = "EM ANDAMENTO";
+        $this->statusPedido = "Pendente";
         $this->valor = $valor;
         $this->dataPedido = (new \DateTime('now', new \DateTimeZone('America/Sao_Paulo')))->format('Y-m-d H:i:s');
         return $this;

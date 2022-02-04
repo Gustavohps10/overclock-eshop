@@ -24,6 +24,13 @@ $router->get("/pedidos", "App:listOrders", "app.listOrders");
 $router->get("/pedidos/{id}", "App:detailOrder", "app.detailOrder");
 
 /**
+ * Callback
+ */
+
+$router->group("/callback");
+$router->post("/picpay", "Callback:picpay", "callback.picpay");
+
+/**
  * Address
  */
 $router->group("/enderecos");
