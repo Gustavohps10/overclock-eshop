@@ -37,7 +37,7 @@ It was developed thinking about having the main functionalities of an e-commerce
 # :gear: How to run the application
 
 ## You can use our test site
-> ❌ Not yet implemented
+> :link: http://overclockeshop.ga/
 
 ## or run the application on your machine
 1. Install and Open [XAMPP](https://www.apachefriends.org/xampp-files/7.4.27/xampp-windows-x64-7.4.27-1-VC15-installer.exe)
